@@ -1,0 +1,1 @@
+# This folder is going to used for store don't change the store configuration

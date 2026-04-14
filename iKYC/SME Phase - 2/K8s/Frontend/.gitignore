@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+cap-front-end-v1/node_modules
+/node_modules
+cap-front-end-v1/src/mock-data/node_modules
+cap-front-end-v1/.pnp
+cap-front-end-v1/.json
+#cap-front-end-v1/.env
+.pnp.js
+
+# testing
+cap-front-end-v1/coverage
+
+# production
+cap-front-end-v1/build
+
+# misc
+.DS_Store
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.metadata/

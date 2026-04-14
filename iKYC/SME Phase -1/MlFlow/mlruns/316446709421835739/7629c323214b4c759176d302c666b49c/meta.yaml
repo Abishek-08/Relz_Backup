@@ -1,0 +1,14 @@
+artifact_uri: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/316446709421835739/7629c323214b4c759176d302c666b49c/artifacts
+end_time: 1758202915576
+entry_point_name: ''
+experiment_id: '316446709421835739'
+lifecycle_stage: active
+run_id: 7629c323214b4c759176d302c666b49c
+run_name: Logistic Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758202912755
+status: 3
+tags: []
+user_id: abishekkumar

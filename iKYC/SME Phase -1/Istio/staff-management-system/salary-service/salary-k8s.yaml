@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salary-service
+  namespace: istio-staff-microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: salary-service
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: salary-service
+        version: v1
+    spec:
+      containers:
+        - name: salary-service
+          image: salary-service-image:1.0
+          ports:
+            - containerPort: 8026
+          env:
+            # DB Host and Name from ConfigMap
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_HOST
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: DB_NAME
+            # DB Username and Password from Secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: DB_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: salary-service
+  namespace: istio-staff-microservice
+spec:
+  type: ClusterIP
+  selector:
+    app: salary-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8026

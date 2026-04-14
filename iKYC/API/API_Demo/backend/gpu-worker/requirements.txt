@@ -1,0 +1,4 @@
+aiokafka
+opencv-python-headless
+numpy
+ 

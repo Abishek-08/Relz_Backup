@@ -1,0 +1,23 @@
+#skill_assessment_instruction_main_container {
+  background-color: #f0f4f8;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 100vw;
+}
+
+#skill_assessment_instruction_container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: white;
+}
+
+#skill_assessment_instruction_sub_container{
+     margin-bottom: 20px;
+     position: relative;
+}
+
+#typography_of_Assessment_Starts_in{
+     margin-top: 10px;
+}
+
+

@@ -1,0 +1,161 @@
+To Deploy the springboot application on NGINX server:
+----------------------------------------------------------
+
+step-1:
+----------
+# Convert the springboot application into jar file
+# check the application is running successfully on local.
+
+step-2:
+----------
+# If NGINX is not install in the system, install it.
+
+commands to install NGINX:
+--------------------------
+    # sudo apt update
+    # sudo apt install nginx -y
+    
+    # sudo systemctl start nginx
+    # sudo systemctl enable nginx
+    
+    # sudo systemctl status nginx
+    
+    
+step-3:
+---------
+# configure NGINX as Reverse Proxy
+command:
+---------
+# sudo nano /etc/nginx/sites-available/springboot ----> In this location default file will present, so create separate config file for each application. (Here, I create springboot as separate config file)
+
+# sample config code:
+----------------------
+server {
+    listen 80;
+    server_name myapp.local www.myapp.local;
+ 
+    location / {
+proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+
+
+# Restart NGNIX server After configure the file:
+--------------------------------------------------
+commands:
+-----------
+sudo ln -s /etc/nginx/sites-available/springboot /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+
+
+step-4:
+----------
+# Map custom domains to the application
+# sudo nano /etc/hosts -----> In this location you can add custom domain names.
+
+# sample codes-changes:
+  ----------------------
+  127.0.0.1 myapp.local
+  127.0.0.1 www.myapp.local
+
+
+step-5: (Optional for https://)
+-----------------------------------
+# If mkcert is not present in the machine, install it
+# commands:
+  ------------
+  sudo apt install libnss3-tools
+  curl -JLO https://dl.filippo.io/mkcert/latest?for=linux/amd64
+  chmod +x mkcert-v*-linux-amd64
+  sudo mv mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+  mkcert -install
+  
+  
+  After installation:
+  ----------------------
+  mkdir ~/certs
+  cd ~/certs
+  mkcert myapp.local (or) mkcert myapp.local "*.myapp.local" 
+ 
+ 
+ After that update the NGINX config file:
+ -----------------------------------------
+ sample code:
+ -------------
+ server {
+    listen 80;
+    server_name myapp.local www.myapp.local;
+    return 301 https://$host$request_uri;
+}
+ 
+server {
+    listen 443 ssl;
+    server_name myapp.local www.myapp.local;
+ 
+    ssl_certificate /home/ubuntu/certs/myapp.local.pem;
+    ssl_certificate_key /home/ubuntu/certs/myapp.local-key.pem;
+ 
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+ 
+ 
+ # After that:
+   ----------------
+   sudo nginx -t
+   sudo systemctl reload nginx
+   
+
+
+step-6:
+------------
+# To create system-service file for the application
+# Commands:
+-----------------
+sudo nano /etc/systemd/system/springboot.service
+
+# sample code:
+---------------
+[Unit]
+Description=Spring Boot App
+After=network.target
+
+[Service]
+User=abishekkumar
+WorkingDirectory=/home/abishekkumar/Documents/iKYC/OX
+ExecStart=/usr/bin/java -jar /home/abishekkumar/Documents/iKYC/OX/ox-sample-deploy-0.0.1-SNAPSHOT.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+# Basic commands:
+------------------------
+# sudo systemctl daemon-reload
+# sudo systemctl enable <service-name>
+# sudo systemctl start <service-name>
+# sudo systemctl stop <service-name>
+# sudo systemctl status <service-name>
+# sudo systemctl reload <service-name>
+   
+step-7:
+----------
+https://myapp.local ----> application will expose on this url.
+
+
+Extra commands:
+------------------
+# sudo tail -n 20 /var/log/nginx/error.log -----> To view the logs of the NGINX

@@ -1,0 +1,112 @@
+version: "3.8"
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: microservice_monolithic
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+
+  nginx-detect:
+    image: nginx:latest
+    container_name: nginx-detect
+    ports:
+      - "9020:80" # detect via 8080
+    volumes:
+      - ./detect-service/nginx/nginx-detect.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - detect-service-1
+      - detect-service-2
+
+  detect-service-1:
+    build: ./detect-service
+    container_name: detect-service-1
+    volumes:
+      - "./detect-service:/app"
+    restart: always
+
+  detect-service-2:
+    build: ./detect-service
+    container_name: detect-service-2
+    volumes:
+      - "./detect-service:/app"
+    restart: always
+
+  nginx-doc:
+    image: nginx:latest
+    container_name: nginx-doc
+    ports:
+      - "9040:80" # doc via 8090
+    volumes:
+      - ./doc-service/nginx/nginx-doc.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - doc-service-1
+      - doc-service-2
+
+  doc-service-1:
+    build: ./doc-service
+    container_name: doc-service-1
+    volumes:
+      - "./doc-service:/app"
+    restart: always
+
+  doc-service-2:
+    build: ./doc-service
+    container_name: doc-service-2
+    volumes:
+      - "./doc-service:/app"
+    restart: always
+
+  nginx-spring:
+    image: nginx:latest
+    container_name: nginx-spring
+    ports:
+      - "9080:80" # doc via 8090
+    volumes:
+      - ./spring-service/nginx/nginx-spring.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - spring-service-1
+      - spring-service-2
+      - mysql-db
+
+  spring-service-1:
+    build:
+      context: ./spring-service
+      dockerfile: Dockerfile
+    container_name: spring-service-1
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/microservice_monolithic?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  spring-service-2:
+    build:
+      context: ./spring-service
+      dockerfile: Dockerfile
+    container_name: spring-service-2
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/microservice_monolithic?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./api-gateway:/app"
+    restart: always
+    depends_on:
+      - nginx-detect
+      - nginx-doc
+      - nginx-spring

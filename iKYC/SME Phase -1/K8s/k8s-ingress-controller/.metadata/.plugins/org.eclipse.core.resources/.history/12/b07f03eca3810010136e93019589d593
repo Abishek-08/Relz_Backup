@@ -1,0 +1,8 @@
+package com.course.modal;
+
+public class Course {
+	
+	private int courserId;
+	private String courseName;
+
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-modal": "^3.16.1",
+    "react-password-strength-bar": "^0.4.1"
+  }
+}

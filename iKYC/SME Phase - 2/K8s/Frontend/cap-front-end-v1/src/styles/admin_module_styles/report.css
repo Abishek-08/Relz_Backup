@@ -1,0 +1,68 @@
+#admin_skil_batchwise_report_01 {
+  /* margin-top: 100px;
+    width: 980px;
+    margin-left: 50px; */
+  
+  /* padding-left: 40px; */
+}
+#card_header_skill_report {
+  padding-left: 110px;
+  /* padding: 10px,1px,30px,40px; */
+}
+
+
+.admin-unmappeduser-skill{
+  background-color: #27235c;
+  color: white;
+}
+.admin-unmappeduser-knowledge{
+  background-color: #27235c;
+  color: white;
+}
+
+#admin_module_width{
+  min-height: 100vh;
+  height: auto;
+}
+
+#admin_skil_batchwise_report {
+    /* height: auto;
+    min-height: 710px; */
+    width: 100%;
+    max-width: 100%;
+    background-color: #f5f5ff;
+}
+#admin-module-skillbatchreport_02 {
+  margin-top: 50px;
+  width: 930px;
+  margin-left: 140px;
+}
+#admin_module_batchreport-backbtn{
+  width: 100px;
+  margin-left: 930px;
+  padding-left: 10px;
+  /* background-color: rgb(153, 149, 149); */
+  color: #040404;
+  border-radius: 5px;
+}
+
+#admin_skil_batchwise_report_01{
+        /* margin-top: 100px; */
+        width: 100%;
+        /* margin-right: 40px; */
+        /* margin-left: 140px; */
+    }
+#admin-module-skillbatchreport_02{
+        margin-top: 50px;
+        width: 930px;
+        margin-left: 140px;
+    }
+#card_header_skill_report{
+        padding-left: 110px;
+    }
+#admin_module_batchreport-backbtn{
+   /* padding-right: 950px; */
+   text-decoration: none;
+   width: 100px;
+
+}

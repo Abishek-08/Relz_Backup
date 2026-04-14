@@ -1,0 +1,79 @@
+/*
+ * @aurthor: sundhar raj s - 12106
+ * @since: 01-07-2024
+ * @version: 1.0
+ * @purpose: VerifyOTPStyle.css
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0px;
+}
+
+#user-module-otp-main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-module-otp-main-conatiner-child {
+  /* border: 0.5px solid #cacfd2; */
+  /* border-radius: 10px; */
+  padding: 10px;
+}
+
+#user-module-otp-back-btn {
+  background-color: #ffff;
+  color: #050f99;
+}
+
+#user-module-otp-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 8%; */
+  margin-left: -1%;
+}
+
+#user-module-otp-btn-verify {
+  background-color: #060647;
+  color: #ffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  padding: 8px;
+}
+
+#user-module-otp-btn-clear {
+  background-color: rgba(198, 21, 214, 0.8);
+  width: 75px;
+  font-weight: bold;
+  color: #ffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+#user-module-otp-resendBtn {
+  border: none;
+  background-color: #ffff;
+  margin-left: 1.5%;
+}
+
+#verifyOTP_resend_otp_button{
+  background-color: #060647;
+  color: #ffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  padding: 8px;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+#resend_otp_text_area{
+  padding-right: 20px;
+
+}

@@ -1,0 +1,279 @@
+/* styling for bulk question preview */
+
+/**
+ * @author karpagam.boothanathan
+ * @since 06-07-2024
+ * @version 2.0
+ */
+
+/**
+ * @author karpagam.boothanathan
+ * @since 02-08-2024
+ * @version 6.0
+ */
+
+ .modal-learning {
+  position: absolute;
+  top: 55%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.modal-overlay-learning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header-learning {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-header-learning h2 {
+  margin: 0;
+}
+
+.modal-buttons-learning {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button-learning,
+.save-button-learning,
+.close-button-learning {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.edit-button-learning {
+  background-color: #767779;
+  color: white;
+  height: 40px;
+}
+
+.save-button-learning
+ {
+  background-color: #28a745;
+  color: white;
+  height: 35px;
+  
+
+}
+.confirm-button-learning{
+  background-color: #28a745;
+  color: white;
+  height: 35px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+}
+.cancel-button-learning {
+  background-color: #f1071e;
+  color: white;
+  border: none;
+  height: 35px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-left: 20%;
+  margin-top:-11%;
+}
+
+
+.close-button-learning {
+  background-color: #f1071e;
+  color: white;
+  border: none;
+  height: 35px;
+
+}
+
+.modal-body-learning {
+  margin-top: 10px;
+}
+
+.preview-table-learning {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.preview-table-learning th,
+.preview-table-learning td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.preview-table-learning th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+.preview-table-learning td {
+  text-align: left;
+}
+
+
+
+.green-column {
+  color: green;
+  font-weight: bold;
+}
+
+/* Confirmation Modal */
+.modal-confirm-learning {
+  width: 450px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.confirm-modal-body-learning {
+  padding: 10px;
+  text-align: center;
+}
+
+.save-button-learning,
+.close-button-learning {
+  margin: 5px;
+}
+
+.modal-buttons-learning {
+  display: flex;
+  justify-content: center;
+}
+
+/* Skipped Reasons Modal */
+.modal-skipped-reasons {
+  width: 70%;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-skipped-reasons .modal-header-learning {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-skipped-reasons h3 {
+  margin: 0;
+  color: #110e70;
+  font-weight: bold;
+}
+
+.skipped-reasons-table-learning {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.skipped-reasons-table-learning th,
+.skipped-reasons-table-learning td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.skipped-reasons-table-learning th {
+  background-color: #f4f4f4;
+}
+
+/* Badge on Skipped Reasons Button */
+.skipped-reason-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.skipped-reason-button {
+  background-color: #060270;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.skipped-reason-button:hover {
+  background-color: #0056b3;
+}
+
+.badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-skipped-reasons .modal-body-learning {
+  max-height: 400px; 
+  overflow-y: auto; 
+}
+.skipped-reasons-table-learning {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skipped-reasons-table-learning th, .skipped-reasons-table-learning td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.skipped-reasons-table-learning th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+.close-button-modal-learning-skipped{
+  background-color: #f1071e;
+  color: white;
+  border: none;
+  height: 35px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-left: 20%;
+
+}

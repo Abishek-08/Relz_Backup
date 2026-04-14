@@ -1,0 +1,4 @@
+aiokafka
+ultralytics
+opencv-python
+numpy

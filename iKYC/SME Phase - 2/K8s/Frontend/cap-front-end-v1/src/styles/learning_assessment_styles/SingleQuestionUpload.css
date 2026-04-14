@@ -1,0 +1,102 @@
+#learning-addsingle-maincontainer {
+  top: 9%;
+  padding: 20px;
+  margin-top: 10%;
+  width: 850px;
+  display: flex;
+  margin-bottom: 10%;
+  height: 88%;
+  margin-left:40%;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+ 
+#learning-addsingle-tostify {
+  color: #25235c;
+  font-size: 16px;
+  font-weight: bold;
+}
+ 
+#learning-addsingle-tostify-errors {
+  color: red;
+}
+ 
+#learning-addsingalequestion-deletebtn {
+  margin-top: 7px;
+}
+ 
+#learning-addsingle-heading {
+ 
+  text-align: center;
+  font-weight: bold;
+  color: darkblue;
+}
+ 
+#learning-addquestion-addtopic-subtopic-dropdown {
+  background-color: #25235c;
+  color: #fff;
+  /* &:hover{
+    background-color: #97247e;
+  } */
+}
+ 
+#learning-addSinglequestion-topicmodel-addbtn{
+  background-color: #25235c;
+  color: #fff;
+  /* &:hover{
+    background-color: #97247e;
+  } */
+}
+ 
+#learning-addTopic-subtopic-model {
+  width: 20%;
+}
+ 
+#learning-addquestion-addoptions {
+  margin-top: 10px;
+  color: #25235c;
+}
+ 
+#learning-submit-btn {
+  background-color: #25235c;
+  color: #fff;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 90px;
+  height: 40px;
+  margin-left: 43%;
+  /* &:hover {
+    background-color: #97247e;
+  } */
+}
+ 
+#learning-addOption-btn {
+  margin-top: 10px;
+  background-color: #25235c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 86%;
+  border-radius: 60%;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  /* &:hover {
+    background-color: #97247e;
+  } */
+}
+ 
+ 

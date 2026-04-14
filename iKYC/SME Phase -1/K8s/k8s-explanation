@@ -1,0 +1,6 @@
+Service Object/Component:
+--------------------------------------------
+# It act as an service-discovery
+# It expose outside the kubernetes cluster
+# It act as load balancer
+# If we are creating 3 replicas of the application, it will create the 3-pods. Each running in separate ip-address. To manage the request between these three pods, service-component act as main role of load-balancer to manage the requests.

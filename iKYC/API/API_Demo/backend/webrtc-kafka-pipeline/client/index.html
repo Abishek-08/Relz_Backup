@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>WebSocket frame demo (sends JPEG frames to FastAPI)</h3>
+    <video
+      id="local"
+      autoplay
+      playsinline
+      muted
+      width="640"
+      height="480"
+    ></video>
+    <pre id="log"></pre>
+    <script>
+      const sessionId = "user1";
+      const ws = new WebSocket(
+        `ws://${location.hostname}:8010/ws/${sessionId}`
+      );
+      const videoEl = document.getElementById("local");
+      const log = document.getElementById("log");
+
+      ws.onopen = () => (log.innerText = "WS open");
+      ws.onmessage = (ev) => {
+        try {
+          const data = JSON.parse(ev.data);
+          log.innerText = JSON.stringify(data, null, 2);
+        } catch (e) {
+          log.innerText = ev.data;
+        }
+      };
+
+      navigator.mediaDevices
+        .getUserMedia({ video: true, audio: false })
+        .then((stream) => {
+          videoEl.srcObject = stream;
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          setInterval(() => {
+            canvas.width = videoEl.videoWidth || 640;
+            canvas.height = videoEl.videoHeight || 480;
+            ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+            const dataUrl = canvas.toDataURL("image/jpeg", 0.7);
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(dataUrl);
+            }
+          }, 200); // 5 fps
+        })
+        .catch((err) => (log.innerText = "getUserMedia error: " + err));
+    </script>
+  </body>
+</html>

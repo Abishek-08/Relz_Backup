@@ -1,0 +1,15 @@
+package com.shipping.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.shipping.model.ResponseModel;
+
+@FeignClient(name="booking-service", url="http://localhost:8020/booking")
+public interface BookingAPIClient {
+	
+	@GetMapping("/bookinfo/{bookinfo}")
+	ResponseModel getResponseFromBooking(@PathVariable("bookInfo") String bookInfo);
+
+}

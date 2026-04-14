@@ -1,0 +1,341 @@
+/* .updatecard {
+  background-color: white;
+  width: 50%;
+  margin-top: 80px;
+} */
+
+#close_button_modal_update_profile {
+  background-color: transparent;
+  border: none;
+}
+
+/* .img {
+  padding-left: 90px;
+  margin-left: 90px;
+}
+
+.updateCardContent {
+  padding-top: 90px;
+  padding-left: 180px;
+} */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure modal is on top of other content */
+}
+
+.user-module-usrdb-modal-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+.modal-container h2 {
+  margin-bottom: 20px;
+}
+
+.modal-container .button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-module-updatecard {
+  margin-top: 5px;
+  border: 5px solid black;
+}
+
+.user-module-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-module-user-profile-picture {
+  text-align: center;
+}
+
+#user_module_profile_image {
+  width: 170px;
+  height: 170px;
+  border-radius: 100px;
+  cursor: pointer;
+  object-position: center;
+  z-index: 1;
+}
+
+#camera_alt_button_update_profile {
+  text-align: end;
+  margin-top: -30%;
+  border-radius: 50px;
+  background-color: rgb(9, 9, 104);
+  color: white;
+}
+
+.user-module-updateCardContent {
+  width: 400px;
+  max-height: 200px;
+}
+
+.edit_button {
+  margin: 10px 10px;
+  font-size: 30px;
+}
+
+#update_user_card_body_style {
+  margin: 10px 10px;
+  padding: 10px 20px;
+  border: 1px solid gray;
+}
+
+#update_profile_card_body {
+  margin-top: 40px;
+  padding-left: 90px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.user-module-usrdb-modal-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center; /* Center align content inside modal */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+.modal-container h2 {
+  margin-bottom: 20px;
+}
+
+.modal-container .button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#main-conatiner-update-profile-user {
+  background-color: white;
+  padding: 1% 0%;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-bottom: 4%;
+  border: 1px solid rgb(234, 234, 234);
+  min-height: 100px;
+  display: flex;
+  border-radius: 10px;
+  width: 90%;
+}
+
+#user_profile_titles_card {
+  font-size: 20px;
+}
+
+#user_profile_update_informations_in_cards {
+  font-size: 14px;
+}
+
+#user_profile_update_informations_in_cards_button {
+  background-color: transparent;
+  border: none;
+  color: rgb(2, 80, 249);
+}
+
+#update_user_profile_container {
+  padding: 25px 0px;
+  margin-top: 5%;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
+  width: 100%;
+  min-width: 100%;
+  background-color: white;
+}
+
+#username_profile_picture_update_profile {
+  margin-left: 20px;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+#userEmail_profile_update_userEmail {
+  margin-left: 20px;
+  color: black;
+}
+
+#userEmail_profile_update_userDetails {
+  margin-left: 20px;
+  color: black;
+  font-size: 18px;
+}
+
+#userEmail_profile_update_icons {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+#user_profile_content_container {
+  margin-top: 7%;
+  height: 100%;
+  display: flex;
+  justify-items: center;
+}
+
+#edit_button_update_user {
+  background-color: transparent;
+  border: none;
+  width: auto;
+  margin-right: 20px;
+  align-self: flex-end;
+}
+
+#user_profile_content_container_two {
+  height: 100%;
+  display: flex;
+  justify-items: center;
+  margin-right: 1%;
+}
+
+#submit_profile_picture_button {
+  background-color: transparent;
+  border: none;
+}
+
+#user_academics_logo_image {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 6px;
+}
+
+#editNoteButton_user_profile {
+  background-color: transparent;
+  border: none;
+}
+
+.image-container {
+  position: relative; /* Ensure container is positioned relatively */
+  display: inline-block; /* Ensures container doesn't expand unnecessarily */
+}
+
+.corner-button {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  padding: 10px 10px;
+  background-color: rgb(5, 2, 82);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+#submit_profile_picture_button_success {
+  background-color: transparent;
+  border: none;
+  background-color: lightgreen;
+  border-radius: 20px;
+  padding-top: 2px;
+}
+
+#submit_profile_picture_button_cancel {
+  background-color: transparent;
+  border: none;
+  color: white;
+  background-color: rgb(185, 48, 48);
+  border-radius: 20px;
+  padding-top: 2px;
+}
+
+/******************* Model Styles ********************/
+
+#input_box_add_work_experience {
+  background-color: transparent;
+  border: 2px solid black;
+  margin: 6px;
+}
+
+#input_box_add_work_experience:hover {
+  background-color: transparent;
+  border: 2px solid black;
+  margin: 6px;
+}
+
+#work_experience_lable {
+  text-align: left;
+  color: black;
+  margin-left: 6px;
+}
+
+#submit_button_work_experience {
+  border: none;
+  background-color: rgb(11, 12, 114);
+  align-content: center;
+  width: 40%;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-left: 30%;
+}
+
+#submit_button_work_experience:hover {
+  border: none;
+  background-color: rgb(9, 11, 92);
+  align-content: center;
+}
+
+.user-module-usrdb-modal-container {
+  background-color: rgba(255, 255, 255, 0.941);
+  margin: 0 auto;
+  width: 700px;
+}
+
+#update_password_component_user_module {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+#user_academics_logo_image_certificate {
+  width: 150px;
+  height: 100px;
+}
+#personal_information_text {
+  font-size: 28px;
+  color: #25235c;
+  margin-left: 5px;
+}
+

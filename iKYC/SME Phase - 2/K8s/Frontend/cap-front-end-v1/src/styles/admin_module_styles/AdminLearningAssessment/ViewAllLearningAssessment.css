@@ -1,0 +1,30 @@
+#View_All_learning{
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: 7%;
+}
+
+.View_All_learning_tab_Box{
+    
+    width: 1110px;
+}
+
+.View_All_learning_tab_Parent{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: auto;
+    /* height: 500px; */
+    color: black;  
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 23px 23px 47px #ebebeb,
+        -23px -23px 47px #ffffff;
+    margin-bottom: 70px;
+}
+
+#admin_module_L0{
+    width: 60%;
+    margin-left: 10px;
+}

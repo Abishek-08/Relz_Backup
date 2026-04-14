@@ -1,0 +1,61 @@
+#Skill_assessment_question_pick_admin_parent{
+    background-color: #f5f5f5;
+    flex-direction: column;
+    height: 735px;
+}
+#skill_question_pick_Admin_Stepper{
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#Skill_assessment_question_pick_admin_tab {
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+ 
+.Skill_assessment_question_pick_total_field {
+    padding-left: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+}
+ 
+.Skill_assessment_question_pick_category_field {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 20px;
+}
+ 
+.Skill_assessment_question_pick_category_field {
+    margin: 0px 50px 0px 50px;
+}
+ 
+.Skill_assessment_question_pick_add_button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    /* width: 150px; */
+    font-weight: 800;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 40px;
+}
+ 
+.Skill_assessment_question_pick_admin_question_list {
+    padding: 10px 50px 0px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ 
+}
+ 
+.Skill_assessment_question_pick_admin_next_button {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}

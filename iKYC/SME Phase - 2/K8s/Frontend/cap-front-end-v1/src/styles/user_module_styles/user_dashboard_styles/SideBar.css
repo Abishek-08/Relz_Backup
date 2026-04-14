@@ -1,0 +1,62 @@
+.user-module-appbar {
+  background-color: white;
+  color: white;
+}
+
+.user-module-ProfileSection {
+  display: flex;
+  align-items: center;
+}
+
+.user-module-sidebar-Avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-module-LogoutButton {
+  background-color: #ffffff;
+  color: rgb(8, 62, 124);
+  border: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-link::after {
+  color: white;
+}
+
+#user_navbar_logo {
+  width: 220px; 
+  height: auto;
+}
+
+#user_navbar_links {
+  color: white !important; 
+  margin-right: 10px; 
+}
+
+.user_navbar_links_dropdown_button {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; 
+  text-align: left;
+  margin-right: 10px;
+}
+
+#collapsible-nav-dropdown{
+  margin-right: 10px;
+}
+
+
+
+
+
+
+

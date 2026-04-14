@@ -1,0 +1,178 @@
+/* styling for Bulkupload question */
+
+/**
+ * @author karpagam.boothanathan
+ * @since 06-07-2024
+ * @version 2.0
+ */
+
+/**
+ * @author karpagam.boothanathan
+ * @since 02-08-2024
+ * @version 6.0
+ */
+
+.learning-uploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 730px;
+  margin: 5% auto;
+  margin-top: 8%;
+  border: none;
+}
+
+.learning-uploadCard {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  border: none;
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.learning-uploadHeader {
+  text-align: center;
+}
+
+.learning-dragDropArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px dashed #aaaaaa;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.learning-dragDropText {
+  margin-top: 10px;
+}
+
+.learning-fileInputLabel {
+  display: flex;
+  padding: 10px;
+  background-color: #060270;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+
+}
+
+
+
+.learning-fileInput {
+  display: none;
+}
+
+.learning-exportButton {
+  margin-left: 10px;
+}
+
+.learning-fileInfo {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.learning-selectedFile {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #CECECE;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1
+}
+
+.learning-fileDetails {
+  display: flex;
+  align-items: center;
+}
+
+.learning-fileName {
+  margin-right: 10px;
+
+}
+
+.learning-clearIcon {
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.learning-clearIcon:hover {
+  color: #ff4d4f;
+  /* Red on hover for clear icon */
+}
+
+.learning-previewButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: '10px 20px';
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.learning-modalContent {
+  position: absolute;
+  width: 40%;
+  max-height: 70vh; 
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: white;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  border:2px solid black ;
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+  outline: 0;
+}
+
+.learning-conformContent{
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+}
+
+#learning-alert-button-color{
+  background-color: #060270;
+}
+
+
+.learning-coloredgrid {
+  background-color: #d3d3d6;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#learning-submitButton {
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #060270;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  height: 40px;
+}
+
+#learning-submitButton:disabled {
+  background-color: #ccc;
+  /* Change color for disabled state */
+  cursor: not-allowed;
+}

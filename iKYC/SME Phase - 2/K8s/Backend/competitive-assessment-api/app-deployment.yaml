@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cap-app-deployment
+  namespace: cap-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: cap-app-demo
+  template:
+    metadata:
+      labels:
+        app: cap-app-demo
+    spec:
+      containers:
+        - name: cap-app-container
+          image: cap-image:1.0
+          ports:
+            - containerPort: 8090
+          env:
+            # Setting Environmental Variables
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: host
+
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: dbname
+
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: username
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secrets
+                  key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cap-app-svc
+  namespace: cap-app
+spec:
+  selector:
+    app: cap-app-demo
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: NodePort

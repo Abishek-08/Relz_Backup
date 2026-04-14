@@ -1,0 +1,30 @@
+package com.blog;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.blog.modal.Blog;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/blog")
+public class BlogServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BlogServiceApplication.class, args);
+	}
+
+	@GetMapping("/all")
+	public List<Blog> getAllBlog() {
+		return Stream.of(new Blog(1, "blog-1"), new Blog(2, "blog-2"), new Blog(3, "blog-3"), new Blog(4, "blog-4"))
+				.collect(Collectors.toList());
+	}
+
+}

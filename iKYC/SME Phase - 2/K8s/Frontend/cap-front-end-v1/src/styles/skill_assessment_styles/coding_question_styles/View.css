@@ -1,0 +1,33 @@
+#codeview-head {
+  background-color: #e8e8fb;
+}
+
+#codeview-heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+#closeCode-btn {
+  background-color: #053275;
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 35px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: none;
+}
+
+#closeCode-btn:hover{
+  background-color: #0b4db0;
+}
+
+#code-viewtitle{
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}

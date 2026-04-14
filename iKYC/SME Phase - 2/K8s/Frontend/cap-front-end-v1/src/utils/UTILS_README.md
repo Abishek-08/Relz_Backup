@@ -1,0 +1,1 @@
+# Use this folder for validations and required functionalities

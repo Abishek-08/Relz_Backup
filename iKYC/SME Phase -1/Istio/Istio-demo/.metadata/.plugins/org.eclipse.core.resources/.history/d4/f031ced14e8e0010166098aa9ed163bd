@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booking-service
+  namespace: istio-microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:              # 👈 This MUST match template labels
+      app: booking-service
+      version: v1
+  template:
+    metadata:
+      labels:                 # 👈 Must exactly match the selector
+        app: booking-service
+        version: v1
+    spec:
+      containers:
+        - name: booking
+          image: myrepo/booking-service:latest
+          ports:
+            - containerPort: 8020
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: booking-service
+  namespace: istio-microservice
+spec:
+  selector:                   # 👈 This should match at least `app: booking-service`
+    app: booking-service
+  ports:
+    - port: 8020
+      targetPort: 8020
+ 

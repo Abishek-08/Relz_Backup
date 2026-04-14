@@ -1,0 +1,20 @@
+To open the mysql-terminal inside the k8s-cluster:
+-------------------------------------------------------
+
+step-1:
+----------
+kubectl get pods
+
+step-2:
+----------
+kubectl exec -it <pod-name> -- /bin/bash #(it --> internal terminal)
+
+ step-2.1:
+ -----------
+ 2.1.1) It will open the bash terminal
+ 2.1.2) use "ls" command
+ 2.1.3) use "cd bin" command
+ 
+step-3:
+----------
+mysql -h mysql -u <username> -p #(h->host, u->username, p->password)

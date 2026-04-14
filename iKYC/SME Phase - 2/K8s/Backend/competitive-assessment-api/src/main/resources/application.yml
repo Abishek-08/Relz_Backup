@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: competitive-assessment-api
+ 
+  datasource:
+    url: jdbc:mysql://localhost:3306/cap_report_db?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ 
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    repositories:
+      enabled: true
+ 
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 500MB
+      max-request-size: 500MB
+ 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: noreplycapv1.0@gmail.com
+    password: "kxnf pqyv bczq rgvj"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    displayname: Team CAP
+ 
+server:
+  port: 8090
+  servlet:
+    context-path: /cap
+ 
+logging:
+  level:
+    org.springframework.security: DEBUG
+  file:
+    name: ../logs/cap-log.log
+ 

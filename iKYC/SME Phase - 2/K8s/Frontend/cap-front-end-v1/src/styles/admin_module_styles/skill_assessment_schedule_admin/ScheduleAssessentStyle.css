@@ -1,0 +1,53 @@
+#assessment_schedule_super_parent{
+    flex-direction: column;
+    background-color: #f5f5f5;
+    height: 735px;
+}
+ 
+#assessment_schedule_Admin_Stepper{
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+ 
+#assessment_schedule_Admin_card_component {
+    display: flex;
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+}
+ 
+.assessment_schedule_Admin_input_fields {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+ 
+#assessment_schedule_Admin_schedule_first_components{
+    padding: 30px 50px 30px 50px;
+}
+ 
+#assessment_schedule_Admin_schedule_second_components{
+    padding: 0px 50px 30px 50px;
+}
+ 
+#assessment_schedule_Admin_schedule_choose_schedule_field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+#assessment_schedule_Admin_schedule_schedule_batch_user{
+    padding: 5px 5px 5px 5px;
+}
+ 
+#assessment_schedule_Admin_schedule_buttons{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+   padding-left: 50px;
+   padding-right: 50px;
+}

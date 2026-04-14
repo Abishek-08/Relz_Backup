@@ -1,0 +1,24 @@
+package com.salary.service;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.salary.dao.SalaryDao;
+import com.salary.model.Salary;
+
+@Service
+public class SalaryService {
+
+	private final SalaryDao salaryDao;
+
+	public SalaryService(SalaryDao salaryDao) {
+		super();
+		this.salaryDao = salaryDao;
+	}
+
+	public Salary findSalaryByStaffId(int staffId) {
+		return salaryDao.findByStaffId(staffId);
+	}
+
+}

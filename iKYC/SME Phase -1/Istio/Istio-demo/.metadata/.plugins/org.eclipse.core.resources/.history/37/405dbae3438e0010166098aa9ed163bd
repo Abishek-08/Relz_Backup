@@ -1,0 +1,17 @@
+package com.shipping.service;
+
+import org.springframework.stereotype.Service;
+
+import com.shipping.model.ResponseModel;
+
+@Service
+public class ShippingService {
+
+	public ResponseModel getResponse(String input) {
+		ResponseModel responseModel = new ResponseModel(
+				"Message from Shipping-service, accessed through the booking service: " + input);
+
+		return responseModel;
+	}
+
+}

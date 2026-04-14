@@ -1,0 +1,5 @@
+package com.staff.client;
+
+public interface SalaryClient {
+
+}

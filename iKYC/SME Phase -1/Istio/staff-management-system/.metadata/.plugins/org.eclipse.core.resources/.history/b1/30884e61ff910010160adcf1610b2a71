@@ -1,0 +1,21 @@
+package com.salary.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.salary.service.SalaryService;
+
+@RestController
+@RequestMapping("/salary")
+public class SalaryController {
+
+	private final SalaryService salaryService;
+
+	public SalaryController(SalaryService salaryService) {
+		super();
+		this.salaryService = salaryService;
+	}
+
+	
+
+}

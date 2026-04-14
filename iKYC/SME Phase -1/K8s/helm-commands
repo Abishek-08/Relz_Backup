@@ -1,0 +1,30 @@
+Helm commands:
+-----------------------------------------------------------
+
+1) To create helm-charts ----------> helm create <chart-name>
+2) To view structure of charts --------> tree <chart-name>
+3) To view all the cahrts -------------> helm list
+4) To deploy app through helm ---------> helm install <release-name> <chart-name>
+                                         helm rollback <RELEASE_NAME>
+                                              eg: (helm rollback <release-name> <version-number> -n default)
+                                         helm history <RELEASE_NAME>
+                                         helm upgrade [RELEASE_NAME] [CHART] [flags] 
+                                              eg: (helm upgrade demo-chart-app ./spring-app-chart --values ./spring-app-chart/values.yaml)
+
+5) To delete release --------------> helm uninstall <release-name>
+6) To find current active version -------> helm list --namespace <namespace>
+
+
+Helm diff installtion + use-command:
+-----------------------------------------------------------
+1) helm plugin install https://github.com/databus23/helm-diff
+2) helm plugin list
+
+command usage:
+-----------------
+1) To see the difference between two version ----------------------->  helm diff revision <release-name> <v3> <v5>
+ 
+2) To see the difference between two version before upgrading -------------> helm diff upgrade <release-name> ./mychart --version 0.1.4
+ 
+
+

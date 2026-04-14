@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+dotenv
+pytest
+httpx
+grpcio

@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "report.send.email.to-list",
+  "type": "java.util.List",
+  "description": "A description for 'report.send.email.to-list'"
+}]}

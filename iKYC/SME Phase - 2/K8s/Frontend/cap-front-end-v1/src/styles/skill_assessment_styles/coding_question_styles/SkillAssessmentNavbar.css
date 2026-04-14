@@ -1,0 +1,46 @@
+
+
+#skill-navbar-container {
+  /* Example max width for the container */
+width: 100%;  /* background-color: #007bff ; */
+  height: 30px;
+}
+
+
+#skill-navbar-nav {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+
+} 
+
+#skill-code-heading{
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#skill-code-heading{
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+
+
+#skill_module_submit_btn {
+/* Adjust margin as needed */
+color: white;
+margin-right: 20px;
+border-radius: 0px;
+}
+
+/* Custom styles for white AccessTime icon */
+.white-icon {
+  color: #fff; /* Set icon color to white */
+}
+
+
+
+

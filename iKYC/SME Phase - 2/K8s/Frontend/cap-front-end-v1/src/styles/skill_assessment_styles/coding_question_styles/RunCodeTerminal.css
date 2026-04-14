@@ -1,0 +1,154 @@
+/* src/styles/skill_assessment_styles/coding_question_styles/RunCodeTerminal.css */
+
+
+
+.code-terminal-header {
+  font-size: 16px; /* or adjust based on your design */
+  padding: 8px;
+  font-weight: bold;
+  color: #464343; /* default text color */
+}
+
+.code-header-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.dark-theme .code-terminal-header {
+  color: #fff; /* white color for dark theme */
+  border-bottom: 2px solid #666; /* darker line for dark theme */
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  right: 10px;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.theme-toggle.icon-dark {
+  color: #000000; /* White color for dark mode */
+}
+
+.theme-toggle.icon-light {
+  color: #ffffff; /* Black color for light mode */
+}
+
+.output-container {
+  margin-top: 8px;
+  min-height: 24vh;
+  max-height: 20vh; /* Adjust the maximum height as per your requirement */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: var(--background-color); /* Use CSS variable for background color */
+  font-family: monospace; /* Use a monospaced font for better readability */
+  font-size: 15px;
+  color: var(--text-color); /* Use CSS variable for text color */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Uniform shadow on all sides */
+}
+
+
+.output-container.dark {
+  --background-color: #0f0f0f; /* Dark mode background color */
+  --text-color: #ffffff; /* Dark mode text color */
+}
+
+.output-container.light {
+  --background-color: #ffff; /* Light mode background color */
+  --text-color: rgb(68, 68, 68); /* Light mode text color */
+}
+
+
+.run-code-terminal-container.dark-theme {
+  background-color: #333; /* Dark background color for dark theme */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Darker shadow for dark theme */
+}
+
+.run-code-terminal-container.light-theme {
+  background-color: #fff; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding-top: 2%;
+}
+
+.message-box {
+  background-color: black;
+  border-radius: 8px;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.message-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+.output-container ul {
+  margin: 0; /* Remove default margin */
+  margin-left: 5px; /* Remove default padding */
+  margin-top: 0;
+}
+
+
+
+.testcase-success {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+  margin : 2%;
+}
+
+.runcode-failure-box {
+  color: rgb(223, 3, 3);
+  font-weight: bold;
+  font-size: 20px;
+  margin : 2%;
+}
+
+.compilation-error {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin : 2%;
+}
+
+.success-item {
+  color: green;
+}
+
+.failure-item {
+  color: red;
+  font-weight: bold;
+  align-items: center;
+}
+
+
+.error-item {
+  color: red;
+}
+
+
+
+.run-code-terminal-container.dark-theme {
+  background-color: #222222;
+  color: #fff;
+}
+.run-code-terminal-container.light-theme {
+  background-color: #ffff;
+
+}
+
+
+#runcode-loading {
+  margin-bottom: 10px;
+}
+
+

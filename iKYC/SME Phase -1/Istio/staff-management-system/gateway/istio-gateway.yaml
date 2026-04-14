@@ -1,0 +1,54 @@
+# --- Gateway ---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: microservice-gateway
+  namespace: istio-staff-microservice
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+
+---
+# --- VirtualService ---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: microservice-routing
+  namespace: istio-staff-microservice
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - microservice-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /staff
+      route:
+        - destination:
+            host: staff-service.istio-staff-microservice.svc.cluster.local
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /department
+      route:
+        - destination:
+            host: department-service.istio-staff-microservice.svc.cluster.local
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /salary
+      route:
+        - destination:
+            host: salary-service.istio-staff-microservice.svc.cluster.local
+            port:
+              number: 80

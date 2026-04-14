@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0px;
+}
+
+.user-module-common-footer{
+    background-color: #af0083;
+    padding: 10px;
+    text-align: center;
+    color: #ffff;
+    font-weight: 700;
+    
+}

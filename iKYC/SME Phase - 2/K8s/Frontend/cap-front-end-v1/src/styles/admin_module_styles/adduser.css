@@ -1,0 +1,14 @@
+#admin_createUser_base{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#admin_createUser_body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-right: 3%;
+}

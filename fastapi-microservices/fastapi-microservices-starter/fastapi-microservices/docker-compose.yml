@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - detect
+      - doc
+  detect:
+    build: ./detect
+    depends_on:
+      - redis
+  detect-worker:
+    build: ./detect
+    command: celery -A app.tasks worker --loglevel=info
+    depends_on:
+      - redis
+  doc:
+    build: ./doc
+    depends_on:
+      - redis
+  doc-worker:
+    build: ./doc
+    command: celery -A app.tasks worker --loglevel=info
+    depends_on:
+      - redis

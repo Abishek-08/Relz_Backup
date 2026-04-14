@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+dotenv
+pytest
+httpx
+celery[redis]
+grpcio
+grpcio-tools

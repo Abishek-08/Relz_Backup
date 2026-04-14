@@ -1,0 +1,7 @@
+package com.booking.client;
+
+public class ApiClient {
+
+	private String response;
+
+}

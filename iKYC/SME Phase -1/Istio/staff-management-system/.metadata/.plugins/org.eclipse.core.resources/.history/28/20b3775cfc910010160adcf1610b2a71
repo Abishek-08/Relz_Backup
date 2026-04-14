@@ -1,0 +1,12 @@
+package com.department.service;
+
+import org.springframework.stereotype.Service;
+
+import com.department.dao.DepartmentDao;
+
+@Service
+public class DepartmentService {
+	
+	private final DepartmentDao departmentDao; 
+
+}

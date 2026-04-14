@@ -1,0 +1,12 @@
+package com.shipping.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@FeignClient(name="inventory-service", url="http://inventory-service/inventory")
+public interface InventoryAPIClient {
+	
+	@GetMapping("/get/product")
+	String getProductName();
+
+}

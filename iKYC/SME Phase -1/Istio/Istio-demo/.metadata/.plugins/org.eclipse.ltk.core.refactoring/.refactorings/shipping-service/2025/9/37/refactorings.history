@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.shipping.client.ApiClient&apos; to &apos;BookingAPIClient&apos;&#x0A;- Original project: &apos;shipping-service&apos;&#x0A;- Original element: &apos;com.shipping.client.ApiClient&apos;&#x0A;- Renamed element: &apos;com.shipping.client.BookingAPIClient&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ApiClient&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.shipping.client{ApiClient.java[ApiClient" matchStrategy="1" name="BookingAPIClient" qualified="false" references="true" similarDeclarations="false" stamp="1757504530463" textual="false" version="1.0"/>
+</session>

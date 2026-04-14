@@ -1,0 +1,136 @@
+.Add_Learning_Assessment_Questions_Admin_Tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: auto;
+    height: 800px;
+    color: black;  
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 23px 23px 47px #ebebeb,
+        -23px -23px 47px #ffffff;
+    margin-bottom: 70px;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_TabBox{
+   width: 800px;
+   height: auto;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_Tabs_Parent{
+    display: flex;
+    height: auto;
+    width: 1500px;
+    justify-content: center;
+    flex-direction: column;
+   
+   
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_slider{
+    width: 200px;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_slider_parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+   
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_topic_fields{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-left: 0px;
+ 
+ 
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_pass_field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_form{
+    display: flex;
+    flex-direction: row;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    margin: 30px;
+}
+ 
+.Add_Learning_Assessment_Questions_Admin_topics{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+ 
+.Add_Learning_Assessment_Questions_Stepper{
+    margin-top: 100px;
+    align-self: center;
+    width: 990px;
+}
+#admin-module-level0-assessment{
+   margin-top: 50px;
+   margin-left: 250px;
+}
+#level_three_bottom{
+    margin-top: 25px;
+}
+#Add_Learning_Assessment_Questions_Admin_pass_field1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+#Add_Learning_Assessment_Questions_Admin_topic_fields1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-left: 0px;
+ 
+}
+
+#Add_Learning_Assessment_Questions_Admin_stepper_bar{
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+ 
+#add_learning_assessment_super_parent{
+    flex-direction: column;
+    background-color: #f5f5f5;
+    height: auto;
+}
+ 
+#Add_Learning_Assessment_Questions_Admin_Tabs{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 4%;
+}
+ 
+ 

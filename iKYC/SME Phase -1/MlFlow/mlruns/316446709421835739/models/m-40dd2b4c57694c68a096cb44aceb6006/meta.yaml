@@ -1,0 +1,10 @@
+artifact_location: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/316446709421835739/models/m-40dd2b4c57694c68a096cb44aceb6006/artifacts
+creation_timestamp: 1758202922106
+experiment_id: '316446709421835739'
+last_updated_timestamp: 1758202924303
+model_id: m-40dd2b4c57694c68a096cb44aceb6006
+model_type: ''
+name: model
+source_run_id: 61b420a78f9648c6bb464a6147109297
+status: 2
+status_message: null

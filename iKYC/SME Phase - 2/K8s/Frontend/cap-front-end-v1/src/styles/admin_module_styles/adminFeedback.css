@@ -1,0 +1,54 @@
+#admin_module_admin_feedback_01{
+    margin-top: 40px;
+            padding-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+}
+#admin_module_admin_feedback_02{
+    font-size: 24px;
+    font-weight: bold;
+    color: #27235c;
+    margin-top: 20px;
+}
+
+#admin_module_admin_feedback_03{
+    margin-bottom: 20px 0;
+    margin-top: 10px;
+    display: flex;
+    margin-left: 730px;
+    gap: 16px;
+    width:100% auto;
+}
+#admin_module_admin_feedback_04{
+    min-width: 120;
+}
+#admin_module_admin_feedback_05{
+    text-align: center;
+     margin-top: 20px;
+}
+#admin_module_admin_feedback_06{
+    width: 300px;
+     height: auto;
+}
+#admin_module_admin_feedback_07{
+    margin-bottom: 20px;
+}
+#admin_module_admin_feedback_08{
+    max-width: 345;
+    box-shadow: 3;
+    margin-left: 30px;
+    transition: "transform 0.3s ease";
+    /* hover: transform: scale(1.05); */
+}
+#admin_module_admin_feedback_09{
+    margin-bottom: 16px;
+     font-weight: bold;
+}
+#admin_module_admin_feedback_10{
+    background-color: #27235c;
+    color: white;
+    display: flex;
+    align-items:center;
+    gap: 8px;
+}

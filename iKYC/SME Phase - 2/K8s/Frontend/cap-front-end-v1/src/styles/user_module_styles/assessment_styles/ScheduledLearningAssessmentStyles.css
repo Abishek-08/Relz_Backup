@@ -1,0 +1,70 @@
+.user-module-learning-assessment-card {
+  height: auto;
+  
+  width: calc(100% - 90px);
+  margin: 10px;
+}
+
+
+
+#user-module-learning-filter-by-day-input {
+  min-width: 150px;
+  margin-right: 16px;
+}
+
+#user-module-learning-filter-by-type-select {
+  min-width: 150px;
+  margin-right: 16px;
+}
+
+.user-module-learning-assessment-card {
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-module-learning-assessment-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.user-module-learning-assessment-btn {
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.user-module-learning-assessment-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-module-learning-assessment-btn-disabled {
+  background-color: #a3a3a3;
+  color: #ffffff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+
+/* Right Content Styles */
+.user-module-assessment-rightcontent {
+  margin: 20px;
+  width: 100%;
+  background: linear-gradient(to right, #25235c, #e00472);
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* Tabs Styles */
+.custom-tabs {
+  min-height: 40px;
+}
+
+.custom-tab {
+  min-height: 40px;
+  padding: 6px 12px;
+}
+
+.custom-tab-label {
+  font-size: 0.875rem;
+}

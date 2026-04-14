@@ -1,0 +1,9 @@
+package com.salary.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.salary.model.Salary;
+
+public interface SalaryDao extends JpaRepository<Salary, Integer> {
+
+}

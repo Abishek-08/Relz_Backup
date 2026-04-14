@@ -1,0 +1,147 @@
+#learning_assessment_view_all_table_th {
+  background-color: #27235c;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  border: none !important; 
+  box-shadow:
+  0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+#learning_assessment_view_all_table_td{
+  background-color: #ffffff;
+}
+#learning-assessment-add-ques-button-view-all-page:hover {
+  border-color: #27235c;
+  color: #ffffff;
+  background-color: #27235c; 
+}
+#learning-assessment-add-ques-button-view-all-page {
+  border-color: #27235c;
+  color: #27235c;
+  background-color: #ffffff; 
+}
+
+
+#learning_assessment_view_all_container {
+  justify-content: center;
+  margin-top: 50px !important;
+  padding: 20px !important;
+  width: 100%;
+}
+
+#Get_all_Learning_Assessment_Search {
+  margin-bottom: 20px !important;
+}
+
+
+#learning_assessment_view_all_h2 {
+  margin-bottom: 30px !important;
+  color: darkblue !important; 
+  font-weight: bold;
+}
+
+
+#learning_assessment_view_all_table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: 30px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Soft shadow for the table */
+}
+
+#learning_assessment_module_view_all_search_button {
+  background-color: #c3c3c3 !important;
+  color: black !important;
+  border-color: black !important;
+  box-shadow: #3b3b3b !important;
+}
+
+#learning_assessment_module_view_all_search_button_box {
+  background-color: #c3c3c3 !important;
+  color: black !important;
+  border-color: black !important;
+  box-shadow: #3b3b3b !important;
+  border-radius: 18px;
+}
+
+
+.learning_assessment_text_success {
+  color: rgb(39, 155, 39) !important;
+  font-weight: bold !important;
+}
+
+#learning_assessment_view_all_filter {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-top: -75px !important;
+  padding: 20px !important;
+}
+
+#learning-assessment-view-all-plus-icon {
+  padding-left: 10px !important;
+}
+
+#learning-assessment-pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#learning-assessment-pagination li {
+  margin: 0 5px;
+}
+
+#learning-assessment-pagination li button {
+  background-color: #27235c;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+#learning-assessment-pagination a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#learning-assessment-pagination a:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  #learning-assessment-pagination {
+    flex-wrap: wrap;
+  }
+
+  #learning-assessment-pagination li {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+
+  #learning-assessment-pagination a {
+    padding: 10px;
+  }
+}
+
+#learning-assessment-view-all-record-card {
+  align-items: center !important;
+  justify-content: center !important;
+  width: 400px !important;
+  height: 350px !important;
+  margin-left: 40% !important;
+  border: none !important;
+}
+
+#no-record-found {
+  margin-top: 10px !important;
+}
+
+
+

@@ -1,0 +1,8 @@
+package com.shipping.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="inventory-service", url="http://localhost:8060/inventory")
+public interface InventoryAPIClient {
+
+}

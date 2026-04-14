@@ -1,0 +1,246 @@
+#user_dashboard_overall_component {
+  margin: 0%;
+  min-height: 100vh;
+}
+
+#user_module_main_conatiner {
+  width: 100vw;
+  margin-top: 5%;
+}
+
+#cap_text_user_dashboard {
+  color: #0a056d;
+}
+
+#user_module_Homescreen_descripion {
+  color: #0a056d;
+  font-size: 25px;
+}
+
+#user_dashboard_count_container_one,
+#user_dashboard_count_container_two,
+#user_dashboard_count_container_three,
+#user_dashboard_count_container_four {
+  width: 100%;
+  border-radius: 7px;
+  padding: 10px 5px;
+  border: none;
+  margin: 0 5px;
+  border: 0.5px solid rgb(223, 223, 223);
+  box-shadow: 0px 4px 5px rgba(35, 33, 107, 0.5);
+  color: #23216b;
+}
+
+#user_module_Homescreen_charts {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#user_module_Homescreen_charts_piechart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+  height: 328px;
+  min-width: 327px;
+}
+
+#user_dashboard_profile_image_section {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#userProfile_user_dashboard {
+  padding: 5% 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#userProfile_user_dashboard_image {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  margin-bottom: 10%;
+}
+
+#userProfile_user_dashboard_texts_conatiner {
+  padding-left: 5%;
+  text-align: start;
+  color: rgb(80, 80, 80);
+}
+
+#user_dashboard_overall_component {
+  margin: 0%;
+  min-height: 100vh;
+}
+
+#user_module_main_conatiner {
+  width: 100vw;
+  margin-top: 5%;
+}
+
+#cap_text_user_dashboard {
+  color: #0a056d;
+}
+
+#user_module_Homescreen_descripion {
+  color: #0a056d;
+  font-size: 25px;
+}
+
+#user_dashboard_count_container_one,
+#user_dashboard_count_container_two,
+#user_dashboard_count_container_three,
+#user_dashboard_count_container_four {
+  width: 100%;
+  border-radius: 7px;
+  padding: 10px 5px;
+  border: none;
+  margin: 0 5px;
+  border: 0.5px solid rgb(223, 223, 223);
+  box-shadow: 0px 4px 5px rgba(35, 33, 107, 0.5);
+  color: #23216b;
+}
+
+#user_module_Homescreen_charts {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#user_module_Homescreen_charts_piechart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+  height: 328px;
+  min-width: 327px;
+}
+
+#user_dashboard_profile_image_section {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#userProfile_user_dashboard {
+  padding: 5% 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#userProfile_user_dashboard_image {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  margin-bottom: 10%;
+}
+
+#userProfile_user_dashboard_texts_conatiner {
+  padding-left: 5%;
+  text-align: start;
+  color: rgb(80, 80, 80);
+}
+
+#user_dashboard_overall_component {
+  margin: 0%;
+  min-height: 100vh;
+}
+
+#user_module_main_conatiner {
+  width: 100vw;
+  margin-top: 5%;
+}
+
+#cap_text_user_dashboard {
+  color: #0a056d;
+}
+
+#user_module_Homescreen_descripion {
+  color: #0a056d;
+  font-size: 25px;
+}
+
+#user_dashboard_count_container_one,
+#user_dashboard_count_container_two,
+#user_dashboard_count_container_three,
+#user_dashboard_count_container_four {
+  width: 100%;
+  border-radius: 7px;
+  padding: 10px 5px;
+  border: none;
+  margin: 0 5px;
+  border: 0.5px solid rgb(223, 223, 223);
+  box-shadow: 0px 4px 5px rgba(35, 33, 107, 0.5);
+  color: #23216b;
+}
+
+#user_module_Homescreen_charts {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#user_module_Homescreen_charts_piechart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+  height: 328px;
+  min-width: 327px;
+}
+
+#user_dashboard_profile_image_section {
+  border: 0.5px solid rgb(223, 223, 223);
+  border-radius: 10px;
+}
+
+#userProfile_user_dashboard {
+  padding: 5% 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#userProfile_user_dashboard_image {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  margin-bottom: 10%;
+}
+
+#userProfile_user_dashboard_texts_conatiner {
+  padding-left: 5%;
+  text-align: start;
+  color: rgb(80, 80, 80);
+}
+
+#fixed_conatiner_update_profile_page{
+  position: fixed;
+  min-width: 500px;
+  max-width: 600px;
+  width: 550px;
+}
+
+@media screen and (max-width: 1300px) {
+  #fixed_conatiner_update_profile_page {
+    position: static;
+    width: 100%;
+  }
+
+  #fixed_conatiner_update_profile_page_main{
+    display: "flex";
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+

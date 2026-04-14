@@ -1,0 +1,8 @@
+package com.shipping.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="booking-service", url="http://localhost:8020/shipping")
+public interface BookingAPIClient {
+
+}

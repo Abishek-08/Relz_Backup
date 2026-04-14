@@ -1,0 +1,44 @@
+#cancelCode-deletebtn {
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: none;
+  background-color: #6c6c6c;
+}
+#deleteCode-deletebtn {
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: none;
+  background-color: #770707;
+}
+
+#cancelCode-deletebtn:hover{
+  background-color: #a8a5a5;
+}
+
+#deleteCode-deletebtn:hover {
+  background-color: #b50c0c;
+}
+
+#codeDelete-confirm {
+  font-weight: bold;
+}
+#code-deletebox{
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}

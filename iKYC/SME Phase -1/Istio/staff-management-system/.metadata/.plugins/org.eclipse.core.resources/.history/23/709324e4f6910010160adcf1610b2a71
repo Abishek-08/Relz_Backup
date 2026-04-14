@@ -1,0 +1,5 @@
+package com.department.dao;
+
+public interface DepartmentDao {
+
+}

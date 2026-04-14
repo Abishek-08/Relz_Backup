@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  detect-service:
+    build: ./detect-service
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./detect-service:/app"
+    restart: always
+
+  doc-service:
+    build: ./doc-service
+    ports:
+      - "8090:8090"
+    volumes:
+      - "./doc-service:/app"
+    restart: always
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./api-gateway:/app"
+    restart: always
+    depends_on:
+      - detect-service
+      - doc-service
+# db:
+#   image: "mysql:5.7"
+#   environment:
+#     MYSQL_ROOT_PASSWORD: root
+#   ports:
+#     - "3306:3306"

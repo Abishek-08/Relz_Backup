@@ -1,0 +1,17 @@
+package com.booking.service;
+
+import org.springframework.stereotype.Service;
+
+import com.booking.client.ApiClient;
+
+@Service
+public class BookingService {
+
+	private final ApiClient apiClient;
+
+	public BookingService(ApiClient apiClient) {
+		super();
+		this.apiClient = apiClient;
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.inventory.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.inventory.service.InventoryService;
+
+@RestController
+@RequestMapping("/inventory")
+public class InventoryController {
+
+	private final InventoryService inventoryService;
+
+	public InventoryController(InventoryService inventoryService) {
+		super();
+		this.inventoryService = inventoryService;
+	}
+	
+	@GetMapping("/get/product")
+	public String getProductName() {
+		return inventoryService.getProductName();
+	}
+
+}

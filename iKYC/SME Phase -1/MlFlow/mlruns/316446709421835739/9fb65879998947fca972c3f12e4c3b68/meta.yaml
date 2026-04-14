@@ -1,0 +1,14 @@
+artifact_uri: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/316446709421835739/9fb65879998947fca972c3f12e4c3b68/artifacts
+end_time: 1758202918266
+entry_point_name: ''
+experiment_id: '316446709421835739'
+lifecycle_stage: active
+run_id: 9fb65879998947fca972c3f12e4c3b68
+run_name: Random Forest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758202915669
+status: 3
+tags: []
+user_id: abishekkumar

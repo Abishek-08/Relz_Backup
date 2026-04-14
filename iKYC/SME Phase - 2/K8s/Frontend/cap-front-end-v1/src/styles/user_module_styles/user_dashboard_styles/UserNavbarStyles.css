@@ -1,0 +1,75 @@
+#user_navbar_main_container {
+  background-color: #25235c;
+  align-items: center;
+  flex: 1;
+  position: fixed;
+  padding-right: 10px;
+  min-width: 100vw;
+  height: 70px;
+  z-index: 1000; /* Ensure the navbar is on top of other content */
+}
+
+#navbar_icons_user_module {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+#user_navbar_logo {
+  margin-left: 10%;
+  height: 8vh;
+  border-right: 1px solid white;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+#user_profile_image_navbar {
+  margin-right: 4%;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+#user_navbar_links_dropdown_button {
+  background-color: transparent;
+  border: none;
+}
+
+
+#nav_links.active {
+   color: #fc0f91 !important;  
+  font-weight: bold; 
+}
+
+#nav_links {
+  color: #fff !important;
+  background-color: #25235c;
+}
+
+#nav_links:hover {
+  color: #fc0f91 !important;
+}
+
+#NavDropdown_Profile_button{
+  background-color: #f8f9fa;
+  color: black;
+}
+
+#responsive-navbar-nav{
+  background-color: #25235c;
+  color: white;
+}
+
+
+
+#collapsible-nav-dropdown{
+  background-color: #25235c;
+}
+
+#NavDropdown_Profile_button:hover{
+  background: transparent;
+  color: #3b37b3;
+}
+
+#NavDropdown_Profile_button:active{
+  background: transparent;
+}
+

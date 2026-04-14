@@ -1,0 +1,24 @@
+package com.department.service;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.department.dao.DepartmentDao;
+import com.department.model.Department;
+
+@Service
+public class DepartmentService {
+
+	private final DepartmentDao departmentDao;
+
+	public DepartmentService(DepartmentDao departmentDao) {
+		super();
+		this.departmentDao = departmentDao;
+	}
+
+	public Department findStaffByDepartment(int staffId) {
+		return departmentDao.findByStaffId(staffId);
+	}
+
+}

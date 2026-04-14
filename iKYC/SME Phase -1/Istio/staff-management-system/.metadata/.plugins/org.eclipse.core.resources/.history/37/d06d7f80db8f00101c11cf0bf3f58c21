@@ -1,0 +1,5 @@
+package com.staff.dao;
+
+public class StaffDao {
+
+}

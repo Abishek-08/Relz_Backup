@@ -1,0 +1,14 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+
+# Logs
+logs/
+
+# Python version file
+.python-version
+
+# Node.js dependencies
+node_modules/

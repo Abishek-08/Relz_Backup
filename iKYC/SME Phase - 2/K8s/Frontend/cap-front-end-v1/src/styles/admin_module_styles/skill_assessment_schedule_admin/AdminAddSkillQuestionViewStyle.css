@@ -1,0 +1,17 @@
+.Admin_Add_Skill_Question_View_Navbar{
+    height: auto;
+}
+
+.Admin_Add_Skill_Question_View_Admin_Stepper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Admin_Add_Skill_Question_View_Admin_Skill_Question_Pick{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 100px;
+}

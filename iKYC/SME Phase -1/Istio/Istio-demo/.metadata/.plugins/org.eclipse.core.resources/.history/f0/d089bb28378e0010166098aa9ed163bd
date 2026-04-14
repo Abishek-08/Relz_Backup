@@ -1,0 +1,5 @@
+package com.shipping.service;
+
+public class ShippingService {
+
+}

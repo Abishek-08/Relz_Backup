@@ -1,0 +1,81 @@
+/* LearningAssessmentEngineNavbar.css */
+
+.learning-engine-quiz-navbar {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#learning-engine-quiz-navbar-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#learning-engine-quiz-number-counts {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.learning-engine-question-number-navbar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#learning-engine-quiz-navbar {
+  position: relative;
+}
+
+.learning-engine-quiz-navbar-navitem-label {
+  background-color: #ddd;
+}
+
+.learning-engine-quiz-navbar-navitem-label.flagged {
+  border: 2px solid #FFC107;
+}
+
+.learning-engine-quiz-navbar-navitem-label.highlighted {
+  box-shadow: 0 0 10px 2px #2196F3;
+}
+
+/* Update the existing styles in LearningAssessmentEngineNavbar.css */
+
+#learning-engine-quiz-nav-button {
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1px; /* Adjust this value to fine-tune the number position */
+  overflow: hidden;
+}
+
+/* Updated flag styles */
+#learning-engine-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 12px 0;
+  border-color: transparent #ff0000 transparent transparent;
+}
+

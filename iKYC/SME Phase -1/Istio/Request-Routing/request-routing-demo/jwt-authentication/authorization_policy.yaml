@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: booking-authz
+  namespace: istio-routing
+spec:
+  selector:
+    matchLabels:
+      app: routing-service
+  action: ALLOW
+  rules:
+    - when:
+        - key: request.auth.claims[role]
+          values: ["user", "admin"]

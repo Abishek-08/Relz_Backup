@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+aiokafka
+opencv-python-headless
+python-multipart

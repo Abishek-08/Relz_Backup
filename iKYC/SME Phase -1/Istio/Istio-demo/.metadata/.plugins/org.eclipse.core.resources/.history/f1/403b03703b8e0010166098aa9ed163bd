@@ -1,0 +1,8 @@
+package com.shipping.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+
+public interface BookingAPIClient {
+
+}

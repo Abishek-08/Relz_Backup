@@ -1,0 +1,128 @@
+const LOGIN_API = "/login";
+
+const OTP_VERIFICATION_API = "/otp?email=";
+
+const RESET_PASSWORD_API = `/reset`;
+
+const OTP_RESEND_API = "/resend?email=";
+
+const UPDATE_PASSWORD_API = `/update?newPassword=`;
+
+const SECHEDULED_LEARNING_ASSESSMENT = `/schedule/scheduledLearning`;
+
+const SECHEDULED_SKILL_ASSESSMENT = `/schedule/skill?email=`;
+
+const SECRET_KEY_VERIFICATION = `/schedule/verifySecretKey`;
+
+const INSERT_FEEDBACK = `/user/feedback`;
+
+const LEADERBOARD_API = `/user/leaderboard`;
+
+const ADD_WORKEXPERIENCE_DETAILS = `/user/workexperience?userId=`;
+
+const UPDATE_PROFILE_DETAILS_API = `/user/user`;
+
+const UPDATE_PROFILE_PICTURE_API = `/user/userProfile/`;
+
+const GET_PROFILE_DETAILS_API = `/Profile?userid=`;
+
+const ADD_ACADEMIC_DETAILS = `/user/academic?userId=`;
+
+const GET_ACADEMIC_DETAILS_BY_ID_API = `/user/academic/`;
+
+const DELETE_ACADEMIC_DETAILS = `/user/academic/`;
+
+const GET_ACADEMIC_DETAILS = `/user/academic/`;
+
+const SEND_OTP_API = `/resend?email=`;
+
+const SEND_SECURITY_QUESTIONS = `/security/mapped/`;
+
+const GET_USER_DETAILS = `/user/profile?userId=`;
+
+const GET_SKILLANDLINKS_DETAILS = `/user/skill/`;
+
+const GET_CERTIFICATE_DETAILS = `/certification/`;
+
+const ADD_SKILLANDLINKS_DETAILS = `/user/skill`;
+
+const UPDATE_WORKEXPERIENCE_DETAILS = `/user/workexperience/`;
+
+const UPDATE_SKILLANDLINKS_DETAILS_API = `/user/skill/`;
+
+const UPDATE_ACADEMIC_DETAILS_API = `/user/academic/`;
+
+const DELETE_WORKEXPERIENCE_DETAILS_API = `/user/workexperience/`;
+
+const DELETE_SKILLANDLINKS_DETAILS_API = `/user/skill/`;
+
+const ADD_CERTIFICATE_DETAILS_API = `/user/certification/`;
+
+const DELETE_DETAILS_API = `/user/`;
+
+const GET_SKILL_SCORECARDS_API = `/skill/score?userId=`;
+
+const GET_LEARNING_SCORECARDS_API = `/user/learning/score/`;
+
+const ADD_SECURITY_QUESTIONS_API = `/security/add/`;
+
+const FETCH_SECURITY_QUESTIONS_API = `/security`;
+
+const FETCH_PROCTORING_API = `/admin/proctoring/`;
+
+const GET_GENUINITY_SCORE = `/user/genunity`;
+
+const SET_GENUINITY_SCORE = `/user/genunity`;
+
+const GET_DYNAMIC_FEEDBACK_FEILDS = `/user/feedback/attribute/`;
+
+const GET_GENUINITY_SCORE_PERFORMANCE = `/user/genunity/average/`;
+
+const ADD_USER_REQUEST_API = `/user/request`;
+
+const GET_OVERALL_SCORE_API = `/user/overallScore/`;
+
+export {
+  LOGIN_API,
+  UPDATE_PASSWORD_API,
+  RESET_PASSWORD_API,
+  OTP_RESEND_API,
+  OTP_VERIFICATION_API,
+  SECHEDULED_SKILL_ASSESSMENT,
+  SECHEDULED_LEARNING_ASSESSMENT,
+  SECRET_KEY_VERIFICATION,
+  INSERT_FEEDBACK,
+  LEADERBOARD_API,
+  UPDATE_PROFILE_DETAILS_API,
+  UPDATE_PROFILE_PICTURE_API,
+  GET_PROFILE_DETAILS_API,
+  UPDATE_ACADEMIC_DETAILS_API,
+  UPDATE_SKILLANDLINKS_DETAILS_API,
+  UPDATE_WORKEXPERIENCE_DETAILS,
+  ADD_ACADEMIC_DETAILS,
+  GET_ACADEMIC_DETAILS,
+  SEND_OTP_API,
+  GET_ACADEMIC_DETAILS_BY_ID_API,
+  ADD_SKILLANDLINKS_DETAILS,
+  GET_CERTIFICATE_DETAILS,
+  DELETE_ACADEMIC_DETAILS,
+  ADD_CERTIFICATE_DETAILS_API,
+  DELETE_DETAILS_API,
+  DELETE_SKILLANDLINKS_DETAILS_API,
+  DELETE_WORKEXPERIENCE_DETAILS_API,
+  SEND_SECURITY_QUESTIONS,
+  GET_USER_DETAILS,
+  GET_SKILLANDLINKS_DETAILS,
+  ADD_WORKEXPERIENCE_DETAILS,
+  GET_SKILL_SCORECARDS_API,
+  GET_LEARNING_SCORECARDS_API,
+  ADD_SECURITY_QUESTIONS_API,
+  FETCH_SECURITY_QUESTIONS_API,
+  GET_GENUINITY_SCORE,
+  FETCH_PROCTORING_API,
+  SET_GENUINITY_SCORE,
+  GET_DYNAMIC_FEEDBACK_FEILDS,
+  GET_GENUINITY_SCORE_PERFORMANCE,
+  ADD_USER_REQUEST_API,
+  GET_OVERALL_SCORE_API,
+};

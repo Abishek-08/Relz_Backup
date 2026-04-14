@@ -1,0 +1,14 @@
+artifact_uri: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/316446709421835739/61b420a78f9648c6bb464a6147109297/artifacts
+end_time: 1758202924349
+entry_point_name: ''
+experiment_id: '316446709421835739'
+lifecycle_stage: active
+run_id: 61b420a78f9648c6bb464a6147109297
+run_name: XGBClassifier With SMOTE
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758202921403
+status: 3
+tags: []
+user_id: abishekkumar

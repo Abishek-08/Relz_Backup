@@ -1,0 +1,14 @@
+artifact_uri: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/385217688645625230/c5de1d336a6741f7aa82a803424762e7/artifacts
+end_time: 1758202784894
+entry_point_name: ''
+experiment_id: '385217688645625230'
+lifecycle_stage: active
+run_id: c5de1d336a6741f7aa82a803424762e7
+run_name: likeable-hen-588
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758202782328
+status: 3
+tags: []
+user_id: abishekkumar

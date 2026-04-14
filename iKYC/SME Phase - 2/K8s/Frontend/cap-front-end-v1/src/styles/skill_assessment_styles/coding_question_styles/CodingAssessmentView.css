@@ -1,0 +1,67 @@
+.coding-assessment-container-view {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+
+
+
+.fixed-navbar {
+  z-index: 1000; /* Adjust as needed */
+  background-color: #26245c;
+  height: 40px; /* Adjust height as needed */
+}
+.splitter-row {
+  width: 2px; /* Width of the splitter */
+  background-color: #c4bdbd; /* Color of the splitter */
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  
+}
+.splitter-line {
+  width: 3px; /* Width of the splitter */
+  background-color: #c4bdbd; /* Color of the splitter */
+  /* cursor: ew-resize; */
+
+}
+.splitter-line1 {
+  width: 3px; /* Width of the splitter */
+  background-color: #f7f0f0; /* Color of the splitter */
+}
+
+.bottom-panel {
+  flex: 1; /* Grow to fill remaining space */
+  display: flex;
+  
+}
+
+.bottom-panel .left-panel {
+
+  width: 3.5%; /* Width of left panel */
+}
+
+.left1-panel {
+  flex: 1; /* Grow to fill remaining space */
+  
+  width: 30%;
+}
+
+
+
+
+.right-panel {
+  width: 48%; /* Width of right panel */
+  height: 100%;
+  margin-right: 30px;
+  
+}
+
+
+
+
+

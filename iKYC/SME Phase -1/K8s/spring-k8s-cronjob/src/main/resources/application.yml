@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: abi948407@gmail.com
+    password: ngmc qlxs mnau jrhl   
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+report:
+  send:
+    email:
+      toList: "abik2781@gmail.com"
+        

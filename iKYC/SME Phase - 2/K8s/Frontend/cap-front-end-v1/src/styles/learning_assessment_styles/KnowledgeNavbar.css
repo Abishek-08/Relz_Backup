@@ -1,0 +1,163 @@
+#knowledge-navbar-container {
+  /* Example max width for the container */
+  width: 100%;
+  height: 30px;
+}
+
+
+#knowledge-navbar-nav {
+  display: flex;
+  align-items: center;
+  /* Center items vertically */
+  list-style-type: none;
+  /* Remove bullet points */
+  padding: 0;
+  justify-content: space-between;
+
+}
+
+#knowledge-code-heading {
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 0px;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+
+#knowledge_module_submit_btn {
+  margin-top: 6px;
+  color: white;
+  margin-right: 20px;
+}
+
+/* Custom styles for white AccessTime icon */
+.white-icon {
+  color: #fff;
+  /* Set icon color to white */
+}
+
+.knowledge-assessment-navbar-timer {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+.knowledge-assessment-timer-blinking-text {
+  animation: blinker 1s step-start infinite;
+  font-weight: bold;
+}
+
+@keyframes blinker {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: white;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+.knowledge-navbar-progress-bar-container {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: #27235c;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.knowledge-navbar-progress-bar {
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+}
+
+@keyframes blink {
+  0% { opacity: 0.5; }
+  50% { 
+    opacity: 1;
+    background: white; 
+  }
+  100% { 
+    opacity: 0.5;
+  }
+}
+
+@keyframes blinkz {
+  0% { opacity: 0.5; }
+  50% { 
+    opacity: 1;
+    background: red; 
+  }
+  100% { 
+    opacity: 0.5;
+  }
+}
+
+.knowledge-navbar-progress-bar.blinking {
+  animation: blink 1s step-start infinite;
+}
+
+.knowledge-navbar-progress-bar-container.blinking{
+  animation: blinkz 1s step-start infinite;
+}
+
+@keyframes blinks {
+  0% { 
+    opacity: 0.5; 
+  }
+  50% { 
+    opacity: 1; 
+    background-color: red; 
+  }
+  100% { 
+    opacity: 0.5;
+  }
+}
+
+.knowledge-assessment-navbar-timer.blinking {
+  animation: blinks 1s step-start infinite;
+}
+
+/* Hide the button on smaller screens */
+@media (max-width: 768px) {
+  #knowledge_module_submit_btn {
+    display: none; /* Hide button on small screens */
+  }
+
+  #knowledge-assessment-time-shower {
+    margin-top: 0;
+    margin-left: 35%;
+  }
+
+  #knowledge-navbar-container{
+    width: 100%;
+    height: 20px;
+  }
+
+  #knowledge-assessment-navbar-logo{
+    width: 15px;
+    height: 10px;
+  }
+
+  #knowledge-code-heading{
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 3px;
+  }
+}
+

@@ -1,0 +1,58 @@
+package com.staff.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.staff.client.DepartmentClient;
+import com.staff.client.SalaryClient;
+import com.staff.dao.StaffDao;
+import com.staff.dto.DepartmentDTO;
+import com.staff.dto.StaffFindDTO;
+import com.staff.model.Staff;
+
+@Service
+public class StaffService {
+
+	private final StaffDao staffDao;
+	private final DepartmentClient departmentClient;
+	private final SalaryClient salaryClient;
+
+	public StaffService(StaffDao staffDao, DepartmentClient departmentClient, SalaryClient salaryClient) {
+		super();
+		this.staffDao = staffDao;
+		this.departmentClient = departmentClient;
+		this.salaryClient = salaryClient;
+	}
+
+	public Staff addStaff(Staff staff) {
+		return staffDao.save(staff);
+	}
+
+	public Optional<Staff> findStaff(int staffId) {
+		return staffDao.findById(staffId);
+	}
+
+	public List<Staff> findAllStaff() {
+		return staffDao.findAll();
+	}
+
+	public boolean deleteStaff(int staffId) {
+		try {
+			staffDao.deleteById(staffId);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public StaffFindDTO findAllDetailsOfStaff(int staffId) {
+		Staff staff = staffDao.findById(staffId).get();
+//		DepartmentDTO department = departmentClient.getStaffByDepartment(staffId);
+		System.out.println( departmentClient.getStaffByDepartment(staffId));
+//		StaffFindDTO staffFindDTO = new StaffFindDTO(staffId, staff.getStaffName(), department.getDepartmentName(), staffId);
+		return null;
+	}
+
+}

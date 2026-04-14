@@ -1,0 +1,308 @@
+/* LearningAssessmentEngineMain.css */
+
+#learning-engine-exam-screen {
+  margin-top: 60px;
+  justify-content: center;
+}
+
+/* Legend positioning and layout */
+#learning-engine-status-container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 50px;
+  right: 65px;
+  width: 900px;
+  z-index: 1;
+}
+
+#learning-engine-status-container .MuiCard-root {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: auto;
+  align-items: end;
+}
+
+.learning-engine-status-container-p {
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+#learning-engine-status-container .MuiGrid-container {
+  display: flex; /* Use flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+  gap: 8px; /* Adjust gap between items */
+}
+
+#learning-engine-status-container .MuiGrid-item {
+  flex: 1; /* Allow items to grow and shrink equally */
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+/* Typography styling to reduce gaps between elements */
+#learning-engine-status-container .MuiTypography-body1 {
+  color: #666;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+/* Status indicator styling */
+.learning-status-indicator {
+  width: 25px; /* Adjust size */
+  height: 25px; /* Adjust size */
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-right: 10px;
+  align-items: center;
+}
+
+/* Status count styling */
+.learning-status-count {
+  font-size: 0.875rem; /* Adjust font size */
+  font-weight: 400;
+  color: #333;
+  flex-shrink: 0;
+  width: 20px; /* Adjust width for count */
+  text-align: left;
+}
+
+.learning-status-text {
+  font-size: 0.7rem;
+  font-weight: bolder;
+  color: black;
+  text-align: left;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #learning-engine-status-container {
+    display: none;
+  }
+
+  #learning-engine-question-status{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #learning-engine-status-container .MuiGrid-container {
+    display: none;
+  }
+
+  #learning-engine-question-status{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.learning-status-indicator.answered {
+  background: linear-gradient(to top, #27235c 40%, #ddd 60%);
+}
+
+.learning-status-indicator.not-attempted {
+  background-color: #ddd;
+}
+
+.learning-status-indicator.flagged::after {
+  content: '';
+  position: absolute;
+  top: -10;
+  right: -5;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 10px 0;
+  border-radius: 2px;
+  border-color: transparent #ff0000 transparent transparent;
+}
+
+#learning-engine-container-main {
+  justify-content: center;
+}
+
+.knowledge-fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Adjust as needed */
+  background-color: rgb(38, 36, 92);
+  height: 55px;
+  /* Adjust height as needed */
+}
+
+/* Progress Bar container */
+
+.learning-engine-progress-bar-container {
+  margin-left: 65px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  justify-content: center;
+  text-align: center;
+}
+
+.learning-engine-progress-bar-value {
+  display: inline;
+  color: #008000;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 30px;
+}
+
+.learning-engine-progress-bar-value-name {
+  display: inline;
+  color: black;
+  font-weight: bold;
+  text-align: right;
+  margin-left: 30px;
+}
+
+.learning-engine-progress {
+  background-color: #D0F0C0;
+  color: black;
+  height: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #d8d8d8;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.learning-engine-progress-bar {
+  background-color: #008000;
+  height: 20px;
+}
+
+#learning-engine-screen-main {
+  margin-top: 20px;
+}
+
+/* Quiz navigation */
+#learning-engine-quiz-navigation {
+  position: sticky;
+  top: 20px;
+}
+
+/* Question status */
+#learning-engine-question-status {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+#learning-engine-question-details {
+  margin-left: 10px;
+}
+
+.learning-engine-flag-action {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.learning-engine-flag-action:hover {
+  margin-top: 10px;
+  cursor: pointer;
+  color: #c82333;
+}
+
+.learning-engine-flag-action button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  margin-top: -30px;
+}
+
+.learning-engine-flag-action button:hover {
+  color: #c82333;
+  text-decoration: underline;
+}
+
+/* Main question and options */
+#learning-engine-quiz-content {
+  background-color: #ffffff;
+  opacity: 10px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#learning-engine-quiz-main {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#learning-engine-quiz-question {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#learning-engine-exam-options {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#learning-engine-option-card {
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-width: 0.5px;
+  border-color: #000000;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  row-gap: 5px;
+  box-sizing: border-box;
+}
+
+.learning-engine-exam-option-ssq-radio,
+.learning-engine-exam-option-msq-checkbox {
+  margin-right: 20px;
+  cursor: pointer;
+  accent-color: #27235c;
+}
+
+/* Quiz buttons */
+#learning-engine-previous-buttons {
+  margin-top: 20px;
+  float: right;
+  background-color: #27235c;
+  color: white;
+}
+
+#learning-engine-next-buttons {
+  margin-top: 20px;
+  float: right;
+  background-color: #27235c;
+  color: white;
+}
+
+#learning-engine-previous-buttons:hover {
+  background-color: #D3D3D3;
+  color: black;
+  cursor: pointer;
+}
+
+#learning-engine-next-button:hover {
+  background-color: #D3D3D3;
+  color: black;
+  cursor: pointer;
+}

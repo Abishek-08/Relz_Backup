@@ -1,0 +1,65 @@
+package com.staff.controller;
+ 
+import com.staff.dto.StaffFindDTO;
+import com.staff.model.Staff;
+import com.staff.service.StaffService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+ 
+import java.util.List;
+import java.util.Optional;
+ 
+@RestController
+@RequestMapping("/staff")
+public class StaffController {
+ 
+    private final StaffService staffService;
+ 
+    public StaffController(StaffService staffService) {
+        this.staffService = staffService;
+    }
+ 
+    // Add new staff
+    @PostMapping
+    public ResponseEntity<Staff> addStaff(@RequestBody Staff staff) {
+        Staff savedStaff = staffService.addStaff(staff);
+        return ResponseEntity.ok(savedStaff);
+    }
+ 
+    // Find staff by ID
+    @GetMapping("/{staffId}")
+    public ResponseEntity<Staff> getStaffById(@PathVariable("staffId") int id) {
+        Optional<Staff> staff = staffService.findStaff(id);
+        return staff.map(ResponseEntity::ok)
+                    .orElse(ResponseEntity.notFound().build());
+    }
+ 
+    // Find all staff
+    @GetMapping
+    public ResponseEntity<List<Staff>> getAllStaff() {
+        List<Staff> staffList = staffService.findAllStaff();
+        return ResponseEntity.ok(staffList);
+    }
+ 
+    // Delete staff by ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteStaff(@PathVariable("id") int id) {
+        boolean deleted = staffService.deleteStaff(id);
+        if (deleted) {
+            return ResponseEntity.ok("Staff deleted successfully with id: " + id);
+        } else {
+            return ResponseEntity.status(500).body("Failed to delete staff with id: " + id);
+        }
+    }
+    
+    @GetMapping("/details/{staffId}")
+    public StaffFindDTO getAllStaff(@PathVariable("staffId") int staffId) {
+    	return staffService.findAllDetailsOfStaff(staffId);
+    }
+    
+    @GetMapping("/test")
+	public ResponseEntity<String> test() {
+		return ResponseEntity.ok("Staff controller is Alive");
+	}
+}
+ 

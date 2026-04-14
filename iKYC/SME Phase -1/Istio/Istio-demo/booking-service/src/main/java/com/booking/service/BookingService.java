@@ -1,0 +1,24 @@
+package com.booking.service;
+
+import org.springframework.stereotype.Service;
+
+import com.booking.client.ApiClient;
+import com.booking.model.ResponseModel;
+
+@Service
+public class BookingService {
+
+	private final ApiClient apiClient;
+
+	public BookingService(ApiClient apiClient) {
+		this.apiClient = apiClient;
+	}
+
+	public ResponseModel callShippingService(String input) {
+		return apiClient.getResponseFromShip(input);
+	}
+	
+	
+	
+
+}

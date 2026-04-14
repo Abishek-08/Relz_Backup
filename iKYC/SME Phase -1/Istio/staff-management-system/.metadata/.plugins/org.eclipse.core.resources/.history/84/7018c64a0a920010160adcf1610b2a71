@@ -1,0 +1,9 @@
+package com.staff.dto;
+
+public class DepartmentDTO {
+	
+	private int departmentId;
+	private String departmentName;
+	private int staffId;
+
+}

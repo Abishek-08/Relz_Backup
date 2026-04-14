@@ -1,0 +1,17 @@
+package com.salary.service;
+
+import org.springframework.stereotype.Service;
+
+import com.salary.dao.SalaryDao;
+
+@Service
+public class SalaryService {
+
+	private final SalaryDao salaryDao;
+
+	public SalaryService(SalaryDao salaryDao) {
+		super();
+		this.salaryDao = salaryDao;
+	}
+
+}

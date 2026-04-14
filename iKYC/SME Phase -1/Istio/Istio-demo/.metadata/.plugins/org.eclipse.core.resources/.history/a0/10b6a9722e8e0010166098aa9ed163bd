@@ -1,0 +1,8 @@
+package com.booking.model;
+
+public class ResponseModel {
+	
+	private String response;
+
+
+}

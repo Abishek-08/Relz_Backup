@@ -1,0 +1,30 @@
+/* Example styles */
+#codequestion-assessment-navbar {
+  align-items: center;
+}
+#code-assessment-navbar-btn {
+  /* background-color: #849ba1; */
+  width: 55px;
+  font-size: 12px;
+
+  align-items: center;
+  height: 50px;
+
+  margin-bottom: 5px;
+  border-radius: 0px;
+
+  transition: 1s ease;
+  margin-left: 0px;
+
+  cursor: pointer;
+}
+#code-assessment-navbar-btn:hover {
+  transform: scale(1);
+  background-color: #88886f;
+  color: black;
+}
+#code-assessment-question {
+  align-items: center;
+}
+
+

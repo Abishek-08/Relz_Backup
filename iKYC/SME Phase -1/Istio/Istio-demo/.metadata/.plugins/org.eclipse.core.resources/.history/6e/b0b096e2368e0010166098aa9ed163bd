@@ -1,0 +1,7 @@
+package com.shipping.model;
+
+public class ResponseModel {
+	
+	private String response;
+
+}

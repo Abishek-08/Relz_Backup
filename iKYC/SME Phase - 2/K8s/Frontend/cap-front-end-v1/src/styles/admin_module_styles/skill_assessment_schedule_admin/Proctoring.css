@@ -1,0 +1,61 @@
+/* CreateSkillAssessmentAdmin.css */
+
+.Create_Skill_Assessment_Admin_Parent {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .Create_Skill_Assessment_Admin_Stepper {
+    margin-bottom: 1rem;
+  }
+  
+  .Create_Skill_Assessment_Admin_Title {
+    margin-bottom: 1rem;
+  }
+  
+  .Create_Skill_Assessment_Admin_Radio_Parent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .Create_Skill_Assessment_Admin_Radio {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 768px) {
+    .Create_Skill_Assessment_Admin_Radio_Parent {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .Create_Skill_Assessment_Admin_Radio {
+      flex: 1;
+      min-width: 200px;
+      margin-right: 1rem;
+    }
+  }
+  
+  .Create_Skill_Assessment_Admin_submit_warning p {
+    color: red;
+  }
+  
+  .violation-count {
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .violation-count.low {
+    color: green;
+  }
+  
+  .violation-count.medium {
+    color: orange;
+  }
+  
+  .violation-count.high {
+    color: red;
+  }
+  

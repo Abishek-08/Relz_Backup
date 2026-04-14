@@ -1,0 +1,120 @@
+#admin_proctor_super_parent{
+    background-color: #f5f5f5;
+    flex-direction: column;
+    height: "100%";
+}
+ 
+#Create_Skill_Assessment_Admin_Stepper{
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#Create_Skill_Assessment_Admin_Parent {
+    display: flex;
+    width: auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+ 
+.Create_Skill_Assessment_Admin_Title {
+    color: darkblue;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%; /* Ensure full width */
+}
+ 
+.Create_Skill_Assessment_Admin_Violation_count {
+    display: flex;
+    justify-content: center;
+    transition: all 1.5s ease-in-out;
+  }
+ 
+.Create_Skill_Assessment_Admin_Radio_Parent {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; /* Adjust spacing */
+    width: 100%; /* Ensure full width */
+}
+ 
+.Create_Skill_Assessment_Admin_Radio {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    flex: 1; /* Allow flexibility */
+}
+ 
+.Create_Skill_Assessment_Admin_submit_warning {
+    color: red;
+    margin-top: 10px; /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+}
+ 
+.Create_Skill_Assessment_Admin_Stepper {
+    width: 100%; /* Ensure full width */
+    max-width: 1200px; /* Limit maximum width */
+    margin-top: 10px;
+}
+ 
+.Create_Skill_Assessment_Admin_Assessment_Title{
+    display: flex;
+    justify-content: center;
+    color: darkblue;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+ 
+.Create_Skill_Assessment_Admin_Title {
+    color: darkblue;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%; /* Ensure full width */
+}
+ 
+#create_skill_assessment_handle_step_button{
+    display: flex;
+    justify-content: space-around;
+}
+ 
+.Create_Skill_Assessment_Admin_Radio_Parent {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around; /* Adjust spacing */
+    width: 100%; /* Ensure full width */
+}
+ 
+.Create_Skill_Assessment_Admin_Radio {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    flex: 1; /* Allow flexibility */
+}
+ 
+.Create_Skill_Assessment_Admin_submit_warning {
+    color: red;
+    margin-top: 10px; /* Add margin for spacing */
+}
+ 
+.Create_Skill_Assessment_Admin_Stepper {
+    width: 100%; /* Ensure full width */
+    max-width: 1200px; /* Limit maximum width */
+    margin-top: 10px;
+}
+ 
+.AdminNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure Navbar is above other content */
+    width: 100%;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+}

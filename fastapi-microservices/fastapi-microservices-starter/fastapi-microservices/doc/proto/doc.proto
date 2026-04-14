@@ -1,0 +1,7 @@
+syntax = "proto3";
+package doc;
+message DocRequest { string text = 1; }
+message DocResponse { string result = 1; }
+service DocService {
+  rpc DocMethod(DocRequest) returns (DocResponse);
+}

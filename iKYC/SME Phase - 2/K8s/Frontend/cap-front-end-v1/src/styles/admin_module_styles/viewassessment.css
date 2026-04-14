@@ -1,0 +1,47 @@
+#admin_viewallassessment_base {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+#admin_viewallassessment_body {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 70px; */
+  padding-top: 4%;
+  /* margin-left: 3%; */
+  background-color: "#f5f5f5";
+  min-height: 100vh;
+}
+
+.admin_viewallassessment_no-data-found {
+  width: 230px;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#admin_viewassessment_h4 {
+  color: #27235c;
+  font-weight: 600;
+}
+
+#admin_viewassessment_marquee {
+  color: #e01950;
+  font-weight: 600;
+}
+
+
+
+.admin_viewallassessment_schedule_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #27235c;
+  text-align: center;
+
+}
+.admin_viewallassessment_schedule {
+  background-color: white;
+  margin-top: 1%;
+}

@@ -1,0 +1,8 @@
+package com.staff.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="department-service", url="http://localhost:8024")
+public interface DepartmentClient {
+
+}

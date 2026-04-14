@@ -1,0 +1,76 @@
+/* styling for LearnQinguiz page */
+
+/**
+@Author : Karpagam B - 12110
+@Since : 08/07/2024
+*/
+
+.learning-main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+}
+
+#learning-main-duration {
+      margin-left: 90%;
+      width: 210px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      border: 2px solid red;
+      border-radius: 3px;
+      padding: 4px;
+      background-color: white;
+      text-align: center;
+}
+
+.learning-question-container {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+}
+
+.learning-question-container p {
+      font-size: 18px;
+      font-weight: bold;
+}
+
+.learning-options-container {
+      margin-top: 10px;
+}
+
+.learning-option {
+      margin-bottom: 10px;
+}
+
+.learning-option input[type="radio"],
+.learning-option input[type="checkbox"] {
+      margin-right: 10px;
+}
+
+.learning-navigation-buttons {
+      margin-top: 20px;
+}
+
+.learning-navigation-buttons button {
+      margin-right: 10px;
+      padding: 10px 10px;
+      border: 2px solid darkblue;
+      border-radius: 5px;
+      background-color: darkblue;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.learning-navigation-buttons button:hover {
+      background-color: #303f9f;
+}

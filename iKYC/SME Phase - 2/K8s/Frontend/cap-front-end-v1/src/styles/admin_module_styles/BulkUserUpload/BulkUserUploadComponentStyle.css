@@ -1,0 +1,14 @@
+.Bulk_user_upload_main_parent{
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    align-items: center;
+}
+
+.Bulk_user_upload_download_template{
+    background-color: #d3d3d6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2px;
+}

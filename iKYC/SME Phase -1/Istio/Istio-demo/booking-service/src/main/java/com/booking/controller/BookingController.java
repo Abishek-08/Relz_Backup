@@ -1,0 +1,35 @@
+package com.booking.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.booking.model.ResponseModel;
+import com.booking.service.BookingService;
+
+@RestController
+@RequestMapping("/booking")
+public class BookingController {
+
+	private final BookingService bookingService;
+
+	public BookingController(BookingService bookingService) {
+		super();
+		this.bookingService = bookingService;
+	}
+
+	@GetMapping("/test/response/ship")
+	public ResponseModel getResponseFromShipping(@RequestParam String input) {
+		return bookingService.callShippingService(input);
+
+	}
+	
+	@GetMapping("/bookinfo/{bookinfo}")
+	public String getBookingInfo(@PathVariable("bookinfo") String bookinfo) {
+		return "The Product status is: " + bookinfo;
+		
+	}
+
+}

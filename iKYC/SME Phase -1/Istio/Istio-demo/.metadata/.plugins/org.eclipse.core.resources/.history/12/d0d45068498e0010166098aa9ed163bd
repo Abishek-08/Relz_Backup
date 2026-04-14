@@ -1,0 +1,45 @@
+package com.shipping.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.shipping.model.ResponseModel;
+import com.shipping.service.ShippingService;
+
+@RestController
+@RequestMapping("/shipping")
+public class ShippingController {
+
+	private ShippingService shippingService;
+
+	public ShippingController(ShippingService shippingService) {
+		super();
+		this.shippingService = shippingService;
+	}
+
+	@GetMapping("/get/response")
+	public ResponseModel getResponse(@RequestParam String input) {
+		return shippingService.getResponse(input);
+	}
+
+	@GetMapping("/ship/bookinfo/{bookinfo}")
+	public String getBookingInfo(@PathVariable("bookinfo") String bookinfo) {
+		return shippingService.getBookingInfo(bookinfo);
+	}
+
+	@GetMapping("/ship/product")
+	public String getProductName() {
+		return shippingService.getProductName();
+	}
+
+	@GetMapping("/ship/product/book/{bookinfo}")
+	public String getProductBookingInfo(@PathVariable("bookinfo") String bookinfo) {
+		String bookInfo = shippingService.getBookingInfo(bookinfo);
+		String productName = shippingService.getProductName();
+		return bookInfo + " " +productName;
+	}
+
+}

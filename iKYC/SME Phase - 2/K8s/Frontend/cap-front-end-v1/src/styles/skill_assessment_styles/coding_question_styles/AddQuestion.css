@@ -1,0 +1,140 @@
+/* AddQuestion.css */
+/* Add this to the bottom of your existing CSS */
+
+.zip-file-error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#code-adding-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.codeadding-head {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+#codedescription-head {
+  font-weight: bold;
+  margin-left: 0.5%;
+}
+#add-category-code{
+  margin-left:2%;
+}
+
+#codequestion-head {
+  font-weight: bold;
+  margin-left: 27%;
+}
+
+#codedownload-head {
+  margin-left: 1%;
+  font-weight: bold;
+}
+
+.codequestion-zip-file {
+  border: 2px dashed #8f8e8e;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.3s ease;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.codequestion-zip-file:hover {
+  border-color: #313030;
+}
+
+.codequestion-zip-file input[type="file"] {
+  display: none;
+}
+
+.codedownload-link {
+  color: blue;
+}
+
+.codedownload-link:hover {
+  text-decoration: underline;
+}
+
+#code-downloadfile {
+  background-color: #d9d8f5;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+  width: 350px;
+  height: 150px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+#code-descriptiontext {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.codequestion-description-editor {
+  background-color: white;
+  border: 1px solid #dddbdb;
+  border-radius: 4px;
+  width: 100%;
+  margin-left: 0%;
+  overflow-y: auto;
+  height: auto;
+}
+
+#codequestion-cancel-btn,
+#codequestion-submit-btn {
+  background-color: #060270;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: none;
+}
+
+#codequestion-cancel-btn {
+  background-color: #6c6c6c;
+}
+
+#codequestion-cancel-btn:hover {
+  background-color: #a8a5a5;
+}
+
+#codequestion-submit-btn:hover {
+  background-color: #0b4db0;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

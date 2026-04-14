@@ -1,0 +1,24 @@
+server:
+  port: 8022
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/department_db?useSSL=false&createDatabaseIfNotPresent&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      initialization-fail-timeout: 0   # Prevents startup failure if DB not ready immediately
+ 
+  jpa:
+    hibernate:
+      ddl-auto: update                # Options: validate | update | create | create-drop
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true                     # Logs SQL in console (disable in prod)
+ 
+  # Logging
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+ 

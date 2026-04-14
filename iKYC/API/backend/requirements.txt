@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+dotenv
+pytest
+httpx
+python-multipart
+ultralytics
+deepface
+tf-keras
+mediapipe
+aiortc

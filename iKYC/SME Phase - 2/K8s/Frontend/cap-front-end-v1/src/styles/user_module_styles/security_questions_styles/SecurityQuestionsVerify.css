@@ -1,0 +1,78 @@
+/* SecurityQuestionsVerify.css */
+ 
+#security-questionverify-form {
+    display: grid;
+    grid-template-columns: 10fr 4fr;
+    gap: 20px;
+    padding-top: 300%;
+   
+}
+ 
+#security-questionverify-form {
+    width: 60%;
+    margin-left: 420px;
+    padding: 30px;
+   
+}
+ 
+#security-questionverify-form Container {
+    height: 50%;
+    width: 50%;
+}
+ 
+#security-questionverify-form TextField {
+    width: 80%;
+    height: 30px;
+}
+ 
+#security-questionverify-form Button {
+    width: 60%;
+    height: 30px;
+}
+ 
+#security-questions-submit-btn {
+   
+    padding: 3px;
+    margin: 3px;
+   
+}
+ 
+#security-questions-verify-icon {
+ 
+    padding: 3px;
+    margin: 3px;
+    
+   
+}
+ 
+#security-verify-answers-btn {
+   background: darkblue;
+   margin-top: 20px;
+   margin-left: 100px;
+   
+}
+ 
+#security-questions-fetch-questions-btn{
+    background: darkblue;
+}
+#security-sidebar-form{
+   
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#security-content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row; /* Ensures items are laid out horizontally */
+  }
+  
+  #security-gif-column {
+    flex: 1; /* Takes up 1/2 of the available space */
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  #security-form-column {
+    flex: 1; /* Takes up 1/2 of the available space */
+    padding: 10px; /* Adjust padding as needed */
+  }

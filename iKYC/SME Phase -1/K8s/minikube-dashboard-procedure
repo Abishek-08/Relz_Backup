@@ -1,0 +1,34 @@
+To start and view minikube-dashboard:
+---------------------------------------------------------
+
+step-1:
+---------
+minikube start --driver=docker --cpus=4 --memory=8192
+
+step-2:
+----------
+minikube ssh
+sudo mkdir -p /usr/local/share/ca-certificates/
+exit
+
+step-3:
+----------
+minikube cp /usr/local/share/ca-certificates/nscacert.crt /usr/local/share/ca-certificates/corp-root-ca.crt
+(/usr/local/share/ca-certificates/nscacert.crt ------> this is my local path)
+
+step-4:
+-----------
+minikube ssh
+sudo update-ca-certificates
+exit
+
+
+step-5:
+----------
+minikube stop
+minikube start
+
+step-6:
+--------------
+minikube addons enable metrics-server
+minikube addons enable dashboard

@@ -1,0 +1,25 @@
+To run the Centrifugo server in local:
+---------------------------------------------------------------------------------------------------------
+
+Permission enabled for host machine:
+----------------------------------------------------------------------
+# It will resolve the permission issues:
+--------------------------------------
+through Docker file:
+-----------------------
+1) sudo chmod 777 $PWD
+2) sudo chown $USER:$USER $PWD
+3) sudo docker run --rm -v$PWD:/centrifugo centrifugo/centrifugo:v6 centrifugo genconfig  => It will config.json
+4) docker run --rm --ulimit nofile=262144:262144 -v /host/dir/with/config/file:/centrifugo -p 8000:8000 centrifugo/centrifugo:v6 centrifugo -c config.json
+   
+   # To find the already running port => sudo lsof -i :8000
+   
+   
+through K8s Helm Charts:
+------------------------------
+1) helm repo add centrifugal https://centrifugal.github.io/helm-charts
+
+Secret-keys generator:
+-----------------------------
+# openssl rand -hex 32 ==> command to create http_api secret-key
+

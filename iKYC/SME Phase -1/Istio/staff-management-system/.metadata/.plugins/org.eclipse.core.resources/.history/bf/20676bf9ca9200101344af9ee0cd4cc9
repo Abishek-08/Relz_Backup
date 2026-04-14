@@ -1,0 +1,29 @@
+package com.salary.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.salary.model.Salary;
+import com.salary.service.SalaryService;
+
+@RestController
+@RequestMapping("/salary")
+public class SalaryController {
+
+	private final SalaryService salaryService;
+
+	public SalaryController(SalaryService salaryService) {
+		super();
+		this.salaryService = salaryService;
+	}
+
+	@GetMapping("/get/staff/{staffId}")
+	public ResponseEntity<Salary> findSalaryByStaff(@PathVariable("staffId") int staffId) {
+		return ResponseEntity.ok(salaryService.findSalaryByStaffId(staffId));
+
+	}
+
+}

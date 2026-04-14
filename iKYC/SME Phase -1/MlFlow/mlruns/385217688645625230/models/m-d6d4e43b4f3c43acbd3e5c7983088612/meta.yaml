@@ -1,0 +1,10 @@
+artifact_location: file:///home/abishekkumar/Documents/SME%27s/MlFlow/mlruns/385217688645625230/models/m-d6d4e43b4f3c43acbd3e5c7983088612/artifacts
+creation_timestamp: 1758202782594
+experiment_id: '385217688645625230'
+last_updated_timestamp: 1758202784849
+model_id: m-d6d4e43b4f3c43acbd3e5c7983088612
+model_type: ''
+name: Logistic Regression
+source_run_id: c5de1d336a6741f7aa82a803424762e7
+status: 2
+status_message: null

@@ -1,0 +1,147 @@
+/* Main Navbar Container */
+#admin-module-navbar-main-container {
+    background-color: #27235c;
+    /* color: #e4e4e4 !important; */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 0.5rem 1rem;
+    height: 70px;
+    z-index: 1000;
+    
+  }
+
+  #admin-dropdown{
+    color: rgb(218, 218, 218);
+  }
+
+  #admin-dropdown:hover{
+    color:#e455c5;
+  }
+
+  .custom-dropdown-menu{
+    background-color: white !important;
+    /* color: Pink !important; */
+  }
+ 
+  /* Active Dropdown Styles */
+.admin-module-navbar-nav .active-dropdown > .nav-link {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: underline 3px #fc0f91;    
+  }
+ 
+  /* Active Dropdown Item Styles */
+  .admin-module-navbar-nav .active-dropdown .dropdown-item.active,
+  .admin-module-navbar-nav .active-dropdown .dropdown-item:active {
+    color: #fc0f91 !important;
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+ 
+  /* Navbar Logo */
+  #admin-module-navbar-logo {
+    height: 54px;
+    /* margin-right: 20px;     */
+  }
+ 
+  /* NavLink Styling */
+  .admin-module-navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+ 
+  /* Active NavLink and Dropdown Item Styles */
+  .admin-module-navbar-nav .nav-link.active,
+  .admin-module-navbar-nav .nav-link.active:hover{
+    color: white !important; /* Active color */
+    font-weight: bold; /* Bold font */
+    text-decoration: underline 3px #fc0f91; /* Underline text */
+  }
+ 
+  /* Default Dropdown Item Styles */
+  .admin-module-navbar-nav .dropdown-menu .dropdown-item {
+    font-weight: normal; /* Normal font weight */
+    text-decoration: none; /* No underline by default */
+  }
+ 
+  /* Dropdown Menu Styling */
+  #admin-module-profile-dropdown {
+    padding: 0;
+    margin-left: auto;
+    color: white;
+  }
+ 
+  #admin-module-profile-dropdown .dropdown-toggle::after {
+    display: none;
+  }
+ 
+  #admin-module-profile-dropdown .dropdown-menu {
+    min-width: 200px;
+    padding: 10px;
+    right: 0;
+    left: auto;
+  }
+ 
+  #admin-module-profile-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+  }
+ 
+  #admin-module-profile-dropdown .dropdown-item:hover,
+  #admin-module-profile-dropdown .dropdown-item:focus {
+    background-color: #f8f9fa;
+  }
+ 
+  #admin-module-profile-dropdown .dropdown-item svg {
+    margin-right: 10px;
+  }
+ 
+  /* Profile Avatar Styling */
+  .admin-module-profile-avatar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid #27235c;
+  }
+ 
+  /* Responsive Design Adjustments */
+  @media (max-width: 991.98px) {
+    #admin-module-navbar-main-container {
+      height: auto;
+    }
+ 
+    .admin-module-navbar-nav {
+      padding-top: 1rem;
+    }
+ 
+    .admin-module-navbar-nav .nav-link {
+      padding-left: 0;
+    }
+ 
+    #admin-module-profile-dropdown {
+      width: 100%;
+      margin-top: 1rem;
+    }
+ 
+    #admin-module-profile-dropdown .dropdown-menu {
+      position: static !important;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+      
+    }
+    /* .admin-module-profile-avatar {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    } */
+    .nav-dropdown-white {
+      background-color: #ffffff;
+    }
+  }

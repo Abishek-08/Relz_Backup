@@ -1,0 +1,48 @@
+.quiz-button {
+    background-color: rgb(156, 134, 134);
+    color: #000;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    margin-bottom: 12px; 
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quiz-button.clicked {
+    background-color: green;
+    color: white;
+  }
+  
+  @media (max-width: 992px) {
+    .quiz-button {
+      padding: 10px 10px; 
+      margin-bottom: 8px; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .quiz-button {
+      padding: 8px 12px; 
+      margin-bottom: 6px; 
+    }
+  }
+  
+  .quiz-button.flagged {
+    color: rgb(252, 250, 250);
+    position: relative; 
+    padding-right: 20px; 
+  }
+  
+  .quiz-button.flagged::before {
+    content: "🚩"; 
+    position: absolute;
+    top: 50%;
+    margin-left: 10px; 
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1; 
+  }

@@ -1,0 +1,14 @@
+package com.staff.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.staff.dto.StaffFindDTO;
+
+@FeignClient(name="salary-service", url="http://localhost:8026")
+public interface SalaryClient {
+	
+	@GetMapping("/salary/get/staff/{staffId}")
+	StaffFindDTO findStaffBySalary();
+
+}

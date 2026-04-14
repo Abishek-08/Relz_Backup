@@ -1,0 +1,66 @@
+#user_module_scorecard_card {
+  padding: 20px;
+  border-radius: 8px;
+  color: #25235c;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+#user_module_scorecard_cardcontent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#user_module_scorecard_rightcontent {
+  background: linear-gradient(to right, #25235c, #e00472);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#user_module_Scorecard_heading {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+#user_module_scorecard_assessment-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#user_module_scorecard_assessment-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+#user_module_scorecard_assessment-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#user_module_scorecard_assessment-categorey {
+  color: #666;
+}
+
+#user_module_scorecard_assessment-details {
+  color: black;
+}
+
+#user_module_scorecard_viewreport_button {
+  color: #ffffff;
+  border-color: #25235c;
+}
+
+#user_module_scorecard_viewreport_button:hover {
+  color: aliceblue;
+}
+
+.PASS {
+  color: rgb(73, 211, 73);
+}
+
+.FAIL {
+  color: rgb(202, 63, 63);
+}

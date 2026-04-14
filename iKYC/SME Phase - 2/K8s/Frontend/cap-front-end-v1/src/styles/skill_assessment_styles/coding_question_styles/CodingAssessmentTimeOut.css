@@ -1,0 +1,161 @@
+/* Blinking animation for danger state */
+@keyframes blink {
+  0%, 100% {
+    color: #dc3545; /* Red color for countdown text */
+  }
+  50% {
+    color: #f8d7da; /* Light red for a softer blink effect */
+  }
+}
+
+/* Countdown text default state */
+.code-countdown-text {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 5px;
+  margin-left: 0px;
+  color: #ffff; /* Dark gray text color */
+  background-color: transparent; /* Ensure background is transparent */
+}
+
+/* Countdown text in danger mode */
+.code-countdown-text-danger {
+  color: #dc3545; /* Red color for countdown when less than 10 minutes */
+  font-weight: bold;
+  animation: blink 1s infinite; /* Blinking animation */
+  background-color: transparent !important; /* Force transparent background */
+  display: inline-block; /* Ensure the background color can be seen as transparent */
+  font-size: 18px; /* Ensure font size is appropriate */
+}
+
+/* Countdown container */
+.react-countdown {
+  display: inline-block;
+  background-color: transparent; /* Ensure background is transparent */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for other elements */
+.code-assessment-timeout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Ensure container background is transparent */
+  border-radius: 8px;
+  padding: 2px;
+  margin-left: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  border: 1px solid #dad4d4; /* Subtle border */
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 28px; /* Adjust as needed */
+  height: 24px; /* Adjust as needed */
+}
+
+.icon-wrapper .timer-icon,
+.icon-wrapper .code-timer-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px; /* Adjust as needed */
+  transition: opacity 0.5s ease; /* Smooth opacity transition */
+}
+
+.timer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.timer-toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.timer-icon,
+.code-timer-icon {
+  margin-left: 5px;
+  font-size: 24px;
+  color: #ffff; /* Primary color */
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* Pulsing effect for icons */
+.pulsing-effect {
+  animation: pulsing 1.5s infinite;
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover effect for icons */
+.timer-icon:hover,
+.code-timer-icon:hover {
+  color: #ffff; /* Darker color on hover */
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+
+/* Styles for popup warning */
+.code-time-popup-warning {
+  position: absolute;
+  top: 45px;
+  left: 52%;
+  transform: translateX(-50%);
+  background-color: #dc3545; /* Red background color */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it appears above other elements */
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-popup-warning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.code-popup-warning-text {
+  display: block;
+  margin-right: 10px;
+}
+
+.code-popup-warning-close {
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.code-popup-warning-close:hover {
+  color: #f8f9fa; /* Lighten color on hover */
+}

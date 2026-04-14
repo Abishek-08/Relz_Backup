@@ -1,0 +1,19 @@
+package com.booking.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.booking.client.ApiClient;
+
+@Service
+public class BookingService {
+    
+	@Autowired
+	private final ApiClient apiClient;
+
+	
+	public String callShippingService(String input) {
+		return apiClient.g
+	}
+
+}

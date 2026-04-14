@@ -1,0 +1,128 @@
+.code-evaluation-span{
+    /* display: block; */
+    /* margin-left: 1rem; */
+    /* padding: 5px; */
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(2, 2, 95);
+    font-family: 'Times New Roman', Times, serif;
+}
+.code-evaluation-span-detail{
+    /* display: block; */
+    /* margin-left: 1rem; */
+    /* padding: 5px; */
+    font-size: larger;
+    
+    color: rgb(2, 2, 95);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#code-module-assessment-info{
+    color: rgb(2, 2, 95);
+}
+
+.code-evaluation-span-score{
+    display: block;
+    text-align: left;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#code-evaluation-tablecell{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#code-evaluation-scoreprogress{
+    width: 20px;
+    height: 20px;
+}
+ 
+#code-evaluation-heading{
+    text-align: center;
+}
+
+
+#code-report-div{
+    /* padding-top: 1px; */
+    color: rgb(2, 2, 95);
+    margin-left: 5%;
+    padding-top: 7px;
+
+}/* Add this to your CSS file */
+@media print {
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Arial', sans-serif;
+    }
+  
+    #pdf-content {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .pdf-section {
+      page-break-inside: avoid;
+    }
+    #code-question {
+        page-break-before: always; /* Forces a page break before the element */
+      }
+  }
+
+  #code-suspious{
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: -170px;
+    margin-left: 180px;
+    font-size: 75px;
+    font-weight: bolder;
+    border-radius: "50%"; 
+    border: "2px solid #00796b";
+    padding: 2;
+    width: 100;
+    height: 100;
+    color: rgb(189, 181, 181);
+
+  }
+
+  #code-no-plagiariasm{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 42%;
+    color: green;
+    font-family: 'Poppins', 'Arial', sans-serif;
+   
+  }
+
+  #code-some-plagiariasm{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 42%;
+    color: rgb(220, 123, 6);
+    font-family: 'Poppins', 'Arial', sans-serif;
+   
+  }
+
+  #code-more-plagiariasm{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 42%;
+    color: #cc001f;
+    font-family: 'Poppins', 'Arial', sans-serif;
+   
+  }
+
+  
+  
+
+

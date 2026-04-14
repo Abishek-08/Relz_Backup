@@ -1,0 +1,4 @@
+com/example/kafkaapp/KafkaConsumerService.class
+com/example/kafkaapp/KafkaAppApplication.class
+com/example/kafkaapp/KafkaProducerService.class
+com/example/kafkaapp/KafkaController.class

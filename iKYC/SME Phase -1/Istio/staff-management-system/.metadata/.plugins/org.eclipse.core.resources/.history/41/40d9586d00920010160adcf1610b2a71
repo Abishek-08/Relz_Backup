@@ -1,0 +1,8 @@
+package com.staff.client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="salary-service", url="http://localhost:8026")
+public interface SalaryClient {
+
+}

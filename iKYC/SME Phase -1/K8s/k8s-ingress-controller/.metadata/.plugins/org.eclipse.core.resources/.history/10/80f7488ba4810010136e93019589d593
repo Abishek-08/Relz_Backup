@@ -1,0 +1,27 @@
+package com.course;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.course.modal.Course;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/course")
+public class CourseServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CourseServiceApplication.class, args);
+	}
+
+	public List<Course> getAllCourse() {
+		return Stream.of(new Course()).collect(Collectors.toList()))
+	}
+
+}

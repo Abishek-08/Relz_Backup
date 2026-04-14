@@ -1,0 +1,311 @@
+#admin_module_viewalluser_adduserbtn {
+  background-color: blue;
+
+}
+
+.admin_view_all_user_details_page_title {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+.admin_view_details_table{
+  display: flex;
+  justify-content: center;
+}
+
+.admin_module_norecord{
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin_view_all_user_loader{
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding-top: 5%
+}
+
+#admin-module-viewalldetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding-top: 6%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.admin_view_assessment_no_data_image_parent {
+  width: 300px;
+  height: 200px;
+}
+
+.admin_viewallassessment_image {
+  display: flex;
+  justify-content: center;
+}
+
+#admin-module-viewuser {
+  font-weight: bold;
+  color: #0F62FE;
+
+}
+
+.admin_view_assessment_no_data_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin_view_all_user_no_data_found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  height: 700px;
+}
+
+.admin_view_all_user_data_not_found_image {
+  width: 40px;
+  height: 40px;
+}
+
+.admin_viewassessment_Click_below {
+  font-size: 40px;
+}
+
+#admin_module_viewalluser {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+}
+
+#admin-module-arrowbutton {
+  background-color: #ebf2f9;
+  border-radius: 10px;
+  height: 40px;
+
+}
+
+#admin-module-adduser-btn {
+  margin-right: -112px;
+  /* margin-top: 10px; */
+}
+
+#admin-viewalluser-select {
+  margin-bottom: -2px;
+  margin-right: 30px;
+
+}
+
+#admin-module-rowsperpage {
+  height: 5px;
+}
+
+
+.admin_module_viewassessment_h4,
+.admin_module_viewassessment_marquee {
+  color: #27235c;
+  /* Dark purple text color */
+  margin-bottom: 10px;
+  /* Margin bottom for spacing */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#admin_module_viewassessment_marquee {
+  font-size: 1.2rem;
+  /* Larger font size for emphasis */
+}
+
+.admin_viewallassessment_button {
+  display: flex;
+  justify-content: center;
+}
+
+.admin_view_all_user_row {
+  width: 100%;
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  /* align-items: center; */
+}
+
+
+.admin_viewallassessment_button Button {
+  color: white;
+  background-color: #27235c;
+  /* Dark purple background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.admin_viewallassessment_button Button:hover {
+  background-color: #97247e;
+  /* Dark pink background on hover */
+}
+
+/* Card style */
+#admin_module_card {
+  margin-left: -7%;
+  background-color: white;
+  /* White background for the card */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Light shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+#admin_module_card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Darker shadow on hover */
+}
+
+/* Table header style */
+#admin_module_viewalluser_header {
+  background-color: #27235c;
+}
+
+.admin_view_all_user_table_header_cell {
+  color: white;
+}
+
+/* Table content style */
+#admin_module_viewalluser_content {
+  background-color: #ffffff;
+  /* White background for content */
+}
+
+/* #admin_module_viewalluser_content tr:nth-child(even) {
+   background-color: #f2f2f2; Light gray alternate row background
+ } */
+
+#admin_module_viewalluser_content tr:hover {
+  background-color: #e0e0e0;
+  /* Light gray hover effect */
+}
+
+/* Container styles */
+#admin_module_viewalluser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#admin-module-arrowbutton {
+  background-color: #ebf2f9;
+  border-radius: 10px;
+  height: 40px;
+
+}
+
+#admin-module-adduser-btn {
+  margin-right: 20px;
+  /* margin-top: 10px; */
+}
+
+#admin-viewalluser-select {
+  margin-bottom: -2px;
+
+}
+
+#admin-module-rowsperpage {
+  height: 5px;
+}
+
+
+#admin_module_viewalluser_content td {
+  padding: 12px;
+  /* Padding for table cells */
+}
+
+/* Delete confirmation dialog */
+#alert-dialog-title {
+  color: red;
+  /* Red title for alert dialog */
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  /* Gap between buttons */
+}
+
+.dialog-actions Button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.dialog-actions Button:nth-child(1) {
+  color: #27235c;
+  /* Dark purple text for cancel button */
+}
+
+.dialog-actions Button:nth-child(2) {
+  color: white;
+  background-color: red;
+  /* Red background for delete button */
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.dialog-actions Button:nth-child(2):hover {
+  background-color: #d32f2f;
+  /* Darker red on hover */
+}
+
+
+#admin_viewalluser_h2 {
+  margin-left: -16%;
+  font-weight: 600;
+}
+
+#admin-module-closebtn-viewuserdetails {
+  position: absolute;
+  top: 10px;
+  right: 80px;
+
+}
+
+#admin-module-schedule-assessment {
+  padding-left: 40px;
+}
+
+#admin-module-filter-condition {
+  border-radius: 30px;
+  height: "5px";
+  width: "200px";
+
+}
+
+#admin-module-feedback-arrowbtn{
+  background-color: #ebf2f9;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 350px;
+}
+#admin-module-feedback-viewdetails{
+  background-color: #ebf2f9;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 350px;
+}

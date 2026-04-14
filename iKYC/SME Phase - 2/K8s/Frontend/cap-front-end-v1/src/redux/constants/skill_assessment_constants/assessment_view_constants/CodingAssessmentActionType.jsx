@@ -1,0 +1,12 @@
+/**
+ * @author sanjay.subramani
+ * @since 11-07-2024
+ * @version 1.0
+*/
+
+export const assessmentConstants = {
+    GET_ASSESSMENT_QUESTIONS: 'GET_ASSESSMENT_QUESTIONS',
+    GET_CURRENT_LANGUAGE_SKELETON: "GET_CURRENT_LANGUAGE_SKELETON",
+    RESET_CURRENT_LANGUAGE_SKELETON: "RESET_CURRENT_LANGUAGE_SKELETON",
+}
+

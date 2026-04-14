@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+ 
+# Virtual env
+.venv/
+
+ 
+# gRPC generated
+*_pb2.py
+*_pb2_grpc.py

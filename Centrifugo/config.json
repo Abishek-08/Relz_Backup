@@ -1,0 +1,44 @@
+{
+  "client": {
+    "token": {
+      "hmac_secret_key": "3103a7e6bdd8a1144c7c60103443efe863767be3302838e50aa64fb08602e45e"
+    },
+    "allowed_origins": ["http://localhost:5173", "http://localhost:5050"]
+  },
+  "http_api": {
+    "key": "d7627bb6-2292-4911-82e1-615c0ed3eebb"
+  },
+  "admin": {
+    "password": "password",
+    "secret": "secret",
+    "enabled": true
+  },
+  "channel": {
+    "without_namespace": {
+      "allow_subscribe_for_client": true,
+      "presence": true,
+      "history_size": 10,
+      "history_ttl": "30s"
+    },
+    "namespaces": [
+      {
+        "name": "FeedbackNS",
+        "history_size": 10,
+        "history_ttl": "300s",
+        "allow_subscribe_for_client": true,
+        "presence": true,
+        "join_leave": true,
+        "force_push_join_leave": true
+      },
+      {
+        "name": "SurveyNS",
+        "history_size": 10,
+        "history_ttl": "300s",
+        "allow_subscribe_for_client": true,
+        "presence": true,
+        "join_leave": true,
+        "force_push_join_leave": true
+      }
+    ]
+  }
+}

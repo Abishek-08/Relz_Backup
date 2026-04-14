@@ -1,0 +1,174 @@
+#learning-report-uppercard {
+  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 10px;
+}
+
+#learning-admin-detailreport-maincontainer {
+  margin-bottom: 50%;
+}
+#learning-report-tablecard {
+  width: 110%;
+}
+
+#learning-admin-report-export-excel {
+  background-color: #402ee5;
+  border: none;
+  color: #fff;
+  padding: 10px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#learning-adminreport-clearIcon {
+  margin-top: 35px;
+  color: white;
+  width: 35%;
+  height: 35%;
+}
+
+#learning-adminsidereport-download-report {
+  background-color: #fff;
+  color: #27235c;
+  font-weight: bold;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#learning-adminreport-tablehead {
+  background-color:"linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+  color: white;
+  
+}
+#learning-report-title {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 3s ease-in-out;
+}
+
+#learning-report-assessment-select,
+#learning-report-assessment-label,
+#learning-report-assessment-select {
+  color: white;
+}
+
+#learning-report-title-icon {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  #learning-adminreport-readmore-modal-heading {
+    color: #27235c;
+    font-weight: bold;
+  }
+
+  #learning-adminreport-readmore-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+
+  #learning-adminreport-options-modal-title {
+    color: #27235c;
+    font-weight: bold;
+  }
+  #learning-adminreport-options-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 20%;
+    color: #4f46d3;
+    font-size: medium;
+  }
+
+  #learning-admin-report-table {
+    animation: fadeIn 2s ease-in-out;
+    
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  #report-table {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Responsive Design */
+
+  @media (max-width: 768px) {
+    /* .container {
+      margin: 20px auto;
+    } */
+    #report-title {
+      font-size: 18px;
+    }
+    #assessment-select,
+    #user-select {
+      width: 100%;
+      padding: 5px;
+    }
+    #report-table {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* .container {
+      margin: 10px auto;
+    } */
+    #report-title {
+      font-size: 14px;
+    }
+    #assessment-select,
+    #user-select {
+      width: 100%;
+      padding: 3px;
+    }
+    #report-table {
+      font-size: 12px;
+    }
+  }
+  #learning-adminreport-image-text-div {
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+
+  #learning-adminreport-image-text {
+    position: absolute;
+    left: 55%;
+    top: 10%;
+    padding-top: 1%;
+    transform: translate(-50%, -50%);
+    color: #090909;
+  }
+
+  #learning-adminreport-image {
+    background-image: url("https://user-images.githubusercontent.com/737821/84618854-c061d600-af16-11ea-94a0-2448f5470821.gif");
+    width: 60%;
+    height: 200px;
+    margin-left: 25%;
+    background-size: cover;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }

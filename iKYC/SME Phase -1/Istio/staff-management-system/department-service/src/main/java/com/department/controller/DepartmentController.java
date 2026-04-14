@@ -1,0 +1,35 @@
+package com.department.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.department.model.Department;
+import com.department.service.DepartmentService;
+
+@RestController
+@RequestMapping("/department")
+public class DepartmentController {
+
+	private final DepartmentService departmentService;
+
+	public DepartmentController(DepartmentService departmentService) {
+		super();
+		this.departmentService = departmentService;
+	}
+
+	@GetMapping("/get/staff/{staffId}")
+	public ResponseEntity<Department> findStaffByDepartment(@PathVariable("staffId") int staffId) {
+		return ResponseEntity.ok(departmentService.findStaffByDepartment(staffId));
+	}
+	
+	@GetMapping("/test")
+	public ResponseEntity<String> test() {
+		return ResponseEntity.ok("Department controller is Alive");
+	}
+	
+	
+
+}

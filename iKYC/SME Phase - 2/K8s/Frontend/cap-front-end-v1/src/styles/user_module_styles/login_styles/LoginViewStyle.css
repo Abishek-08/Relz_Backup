@@ -1,0 +1,142 @@
+LoginDemoStyles.css 
+
+/*
+ * @aurthor: sundhar raj s - 12106
+ * @since: 01-07-2024
+ * @version: 1.0
+ * @purpose: LoginViewStyle.css
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0px;
+}
+
+#user-module-LoginMainContainer {
+  margin: 0%;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+#user-module-LoginImageContainer {
+  width: 400px;
+  height: 550px;
+  margin-top: 25px;
+  background-position: 100%;
+  object-fit: cover;
+  display: flex;
+}
+
+#user-module-LoginImageContainer img {
+  max-width: 100%;
+  height: 550px;
+  border-radius: 5px;
+  display: block;
+}
+
+#user-module-cardContainer {
+  max-width: 400px;
+  height: auto;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+}
+
+#user-module-avatar-container {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 20px;
+}
+
+#user-module-avatarImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-bottom: 20px;
+}
+
+#user-module-loginHeading {
+  color: #1d1c69;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+#user-module-form {
+  margin-top: 20px;
+}
+
+#user-module-captchaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#user-module-captchaBox {
+  font-size: 18px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-style: italic;
+  border: 2px dotted #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  text-decoration: line-through;
+  user-select: none;
+}
+
+#user-module-forgotPassword {
+  margin-top: 20px;
+  text-align: right;
+}
+
+#user-module-forgotPassword-link {
+  text-decoration: none;
+}
+
+#user-module-loginButton {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #330a35;
+  color: #ffff;
+}
+
+#user-module-loginButton-disabled {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #999999;
+  color: #ffff;
+}
+
+#user-module-attempt-remainig {
+  display: none;
+}
+
+#user-module-attempt-remainig-disabled {
+  color: #ff1919;
+}

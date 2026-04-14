@@ -1,0 +1,30 @@
+Istio Commands:
+----------------------------------------------------------------
+Procedures to start istio with k8s:
+----------------------------------------
+pre-requistics:
+------------------
+# istio is installed in the local machine.
+1) cd istio-1.27.0
+2) export PATH=$PWD/bin:$PATH
+3) istioctl install --set profile-default -y
+4) kubectl label namespace default istio-injection=enabled
+
+kubectl commands:
+------------------------
+1) To get all namespaces -------------------> kubectl get ns
+2) To get all gateway   --------------------> kubectl get gateway -n <ns>
+3) To get all virtualservices --------------> kubectl get virtualservice -n <ns>
+4) To forward the port  --------------------> kubectl port-forward -n <ns> svc/<service-object-name> 8080:80
+5) To rollout-restart deployment object -----> kubectl rollout restart deployment
+
+To check the url ip for Ingress API-Gateway:
+------------------------------------------------
+1) kubectl get svc istio-ingressgateway -n istio-system
+
+
+
+
+To get jwt-tokens:
+------------------------
+ curl -s -X POST 'http://localhost:8080/realms/demo/protocol/openid-connect/token'   -d 'client_id=microservices-client'   -d 'username=alice'   -d 'password=1234'   -d 'grant_type=password' -d "client_secret=4FV8aPctX2eO5MJpHKej0UwY13bWTyvK"

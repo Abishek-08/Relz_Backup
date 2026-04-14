@@ -1,0 +1,16 @@
+syntax = "proto3";
+package detect;
+
+message sumRequest {
+    int32 num = 1;
+}
+
+message sumResponse {
+    int64 num = 1;
+}
+
+
+service Detect {
+    rpc testProtoDetect(sumRequest) returns (sumResponse) {}
+}
+

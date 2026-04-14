@@ -1,0 +1,40 @@
+/* Existing styles */
+
+.overlay {
+  border-radius: 8px; /* Example radius, adjust as needed */
+}
+
+/* Add your shadow styles here */
+.editor-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Light shadow */
+}
+
+.editor-container.light-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Light shadow for light theme */
+}
+
+.editor-container.dark-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for dark theme */
+}
+
+
+.light-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.code-line-count {
+  text-align: right;
+  padding: 5px;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ddd;
+  background: #ffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3); 
+  height: 100%; /* Make the editor fill its container */
+
+}
+
+
+
+  
+  

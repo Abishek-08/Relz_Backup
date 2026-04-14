@@ -1,0 +1,7 @@
+syntax = "proto3";
+package detect;
+message TestRequest { string image_url = 1; }
+message TestResponse { string result = 1; }
+service DetectService {
+  rpc TestMethod(TestRequest) returns (TestResponse);
+}

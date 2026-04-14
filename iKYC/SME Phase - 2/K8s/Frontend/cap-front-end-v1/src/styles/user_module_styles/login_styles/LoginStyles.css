@@ -1,0 +1,104 @@
+/* Background and overlay styles */
+#user-module-container {
+  background: linear-gradient(45deg, #23216b, #2661ac);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover;
+  background-position: center; */
+  padding: 0;
+  margin: 0;
+}
+
+#user-module-grid {
+  height: 100%;
+}
+
+#user-module-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid rgb(238, 237, 237); */
+}
+
+#user-module-overlay {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+#user-module-logo {
+  font-weight: bold;
+}
+
+#user-module-text {
+  margin-top: 10px;
+}
+
+/* Form styles */
+#user-module-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: #ffffff;
+  padding: 10px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border: 1px solid #ddd; /* Optional, adjust as needed */
+}
+
+#user-module-paper {
+  padding: 30px;
+  width: 100%;
+  border: 0.5px solid #ddd;
+  max-width: 400px;
+  border-radius: 4px; /* Match the outer container's border-radius */
+}
+
+#user-module-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-module-form-title {
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+#user-module-email,
+#user-module-password {
+  height: 5px;
+}
+
+#user-module-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-module-login-inputField {
+  border-radius: 20px;
+  padding: 0%;
+}
+
+#user-module-link {
+  text-decoration: none;
+  color: #3f51b5;
+}
+
+#user-module-button {
+  margin-top: 15px;
+}
+
+#user-module-error {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* dialog box styling */
+
+#unlock-request-dialog-title {
+  font-weight: bold;
+}

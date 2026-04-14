@@ -1,0 +1,202 @@
+
+#fixed-container{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.code-head {
+  text-align: center;
+  margin-top: 10px;
+}
+#code-table{
+  background-color: #ffff;
+}
+
+.Codefilter-select {
+  width: 180px;
+  margin-right: 10px;
+  min-width: 150px;
+  height: 45px;
+}
+
+
+.Codefilter-select input:focus {
+  outline: none;
+  border-color: #042557;
+  
+}
+#rows-per-page-label{
+  width: 500px;
+  margin-bottom: 5px;
+}
+
+
+#code-tablebox {
+  box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.4);
+
+}
+
+#code-search-box input[type="text"] {
+  width: 250px;
+  padding: 10px;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #a09a9a;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  background-color: rgb(241, 241, 241);
+}
+
+
+#code-searchicon {
+  position: absolute;
+  pointer-events: none;
+  margin-left: 10px;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+
+#code-search-box input[type="text"]:focus {
+  outline: none;
+  border-color: #053275;
+}
+
+/* #code-paper {
+  background-color: #ffff;
+ 
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+} */
+
+#codetable-cell {
+  font-weight: bold;
+  color: white;
+
+}
+
+#codeadd-question_button {
+  background-color: #042557;
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+ 
+}
+
+#codeadd-question_button:hover {
+  background-color: #094094;
+}
+
+#viewCode-btn,
+#updateCode-btn,
+#deleteCode-btn,
+#cancelCode-btn {
+  color: white;
+  margin-right: 10px;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: none;
+}
+
+#detailedQuestion-view,
+#cancelCode-btn {
+  background-color: #094094;
+}
+
+#updatecode-question-btn{
+  background-color: #6c6c6c;
+}
+
+.deleteCode-btn {
+  background-color: #770707;
+}
+
+#viewCode-btn:hover {
+  background-color: #0b4db0;
+}
+
+#updateCode-btn:hover {
+  background-color: #a8a5a5;
+}
+
+#deleteCode-btn:hover {
+  background-color: #b50c0c;
+}
+
+
+#codeHeading-cell {
+  font-weight: bold;
+}
+
+#codeHeading-cell-code-header {
+  text-align: center;
+  font-weight: bold;
+}
+#code-table-cell{
+  cursor: pointer;
+
+  
+}
+#code-table-cell-view{
+  text-align: left;
+}
+#code-table-cell-button {
+  text-align: center;
+ 
+}
+#code-table-row:hover{
+  background-color: #e7e9e9;
+}
+
+#Code-filter-select {
+  width: 100px;
+ 
+
+}
+
+#codetable-cell-action-header {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+
+#code-pagination{
+  background-color: #fcfdfd;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); 
+  border-radius: 100px;
+  width: 400px;
+  height: 40px;
+  margin-left: 35%;
+
+}
+.code-tablehead{
+  background-color: #042557;
+  
+}
+
+
+#code-save-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: #c00707; 
+}
+
+#code-save-content {
+  font-size: 16px;
+  color: black; 
+}
+

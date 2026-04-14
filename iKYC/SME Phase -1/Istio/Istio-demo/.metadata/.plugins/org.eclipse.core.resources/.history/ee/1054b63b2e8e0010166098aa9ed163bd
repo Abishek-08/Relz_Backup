@@ -1,0 +1,5 @@
+package com.booking.client;
+
+public class ApiClient {
+
+}

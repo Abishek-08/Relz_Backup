@@ -1,0 +1,144 @@
+#preview-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 70px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+#preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+#preview-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+#preview-body {
+  flex: 1;
+  max-width: 1000px; /* Max width for the preview body */
+  width: 100%; /* Ensure it takes up the full width within the max width */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#preview-question {
+  margin-bottom: 20px;
+}
+
+#preview-question h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #0c0c0c;
+}
+
+#preview-question h4 {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #080808;
+}
+
+#answer-options {
+  list-style-type: none;
+  padding: 0;
+}
+
+#answer-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#answer-option input {
+  margin-right: 10px;
+}
+
+#flag-action {
+  margin-top: 8px;
+  color: #666;
+  cursor: pointer;
+}
+
+#flag-action svg {
+  margin-right: 5px;
+}
+
+#btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  background-color: transparent;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 70%;
+}
+
+#btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+
+#learning-modal-button-yes {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#learning-modal-button-no {
+  background-color: red;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+#learning-modal-button-yes,
+#learning-modal-button-no {
+  width: auto;
+  margin: 10px;
+  display: inline-block;
+}
+
+#learning-engine-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#learning-engine-preview-footer .btn {
+  margin: 0;
+  background-color: #060270;
+  color: white ;
+}

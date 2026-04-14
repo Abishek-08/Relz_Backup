@@ -1,0 +1,41 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: keycloak-gateway
+  namespace: istio-microservice
+spec:
+  selector:
+    istio: ingressgateway # use istio ingress gateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "keycloak.example.com" # Replace with your DNS
+    - port:
+        number: 443
+        name: https
+        protocol: HTTPS
+      tls:
+        mode: SIMPLE
+        credentialName: keycloak-tls # must match a TLS secret in istio-system
+      hosts:
+        - "keycloak.example.com"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: keycloak
+  namespace: istio-microservice
+spec:
+  hosts:
+    - "keycloak.example.com"
+  gateways:
+    - keycloak-gateway
+  http:
+    - route:
+        - destination:
+            host: keycloak
+            port:
+              number: 8080

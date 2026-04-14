@@ -1,0 +1,21 @@
+.Admin_Bulk_user_view_upload_component{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    /* margin-bottom: -50px; */
+}
+
+.Bulk_User_Upload_Title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #060270;
+}
+
+.Bulk_user_Upload_Title_Parent{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    height: 25px;
+}

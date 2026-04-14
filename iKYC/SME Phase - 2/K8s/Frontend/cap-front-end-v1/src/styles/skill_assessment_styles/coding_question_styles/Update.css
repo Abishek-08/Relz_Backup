@@ -1,0 +1,73 @@
+/* updateQuestionStyles.css */
+
+#codequestion-title {
+  background-color: #fff;
+}
+
+#codeupdate-quill {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+#codeupdate-bg {
+  background-color: #fff;
+  box-shadow:0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+#codeupdate-dialog {
+  background-color: #e8e8fb;
+}
+
+#code-updatefield {
+  margin-top: 20px;
+}
+
+#codeupdate-head {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+#codecancel-button {
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: none;
+  background-color: #6c6c6c;
+}
+#codeupdate-button {
+  background-color: #053275;
+  color: white;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: none;
+}
+
+#codeupdate-button:hover{
+  background-color: #0b4db0;
+}
+
+#codecancel-button:hover{
+  background-color: #a8a5a5;
+}
+
+#codeUpdate-description {
+  padding: 0;
+  font-weight: bold;
+}

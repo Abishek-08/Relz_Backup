@@ -1,0 +1,10 @@
+package com.staff.dto;
+
+public class SalaryDTO {
+
+	private int salaryId;
+	private double salaryAmount;
+	private int departmentId;
+	private int staffId;
+
+}

@@ -1,0 +1,108 @@
+Docker Commands:
+--------------------
+Image build -----> docker build -t <image-name>:<version> .
+Image run   -----> docker run -p 8080:8900 <image-name>
+show all images ------> docker images
+force rebuild the image without previous cache ---------------->  docker build --no-cache -t your-image-name:tag .
+stop the container --------------> docker stop <container-id>
+
+
+
+
+
+Docker built and load the image into minikube-docker:
+---------------------------------------------------------------
+docker build -t spring-k8s-image:1.0 . && \
+minikube image load spring-k8s-image:1.0
+
+
+
+
+Minikube Commands:
+--------------------------------
+To connect local docker with minikube -------> eval $(minikube docker-env)
+Switch to docker desktop ---------------> eval $(minikube docker-env -u)
+
+To start minikube --------> minikube start --driver=docker 
+                            minikube start --cpus=4 --memory=8192  # Allocates 4 CPUs and 8GB of memory)
+To check status   --------> minikube status
+To stop minikube ---------> minikube stop
+To delete minikube --------> minikube delete
+To check the internal docker (minikube/docker-desktop)  ------->  docker info | grep -i "name"
+To view all addons-list  -----------> minikube addons list 
+To get minikube ip    --------------> minikube ip
+
+To view-all pods in name of "kube-system" -------------->  kubectl get pods -n kube-system
+To get service-url/proxy-url ------------> minikube service <service-object-name> --url
+To enable addons  ------------------> minikube addons enable <addons-name> #here change to disable
+
+
+
+
+
+Kubeclt Commands:
+-------------------
+To get all pods,deployment.service -----------> kubectl get all
+To get cluster info ------> kubectl cluster-info
+To get node info    ------> kubectl get node
+To verify deployment  ---------> kubectl get deployment
+To get all secrets ------------> kubectl get secrets
+To get all configmap ----------> kubectl get configmap
+To get all cornjob ------------> kubectl get cornjob
+To watch jobs -----------------> kubectl get jobs --watch
+To delete cronjob -------------> kubectl delete cronjob <cronjob-object-name>
+To get all pods -----> kubectl get pods
+To get pod logs -----> kubectl logs <pod-name>
+
+To creae deployment-object ------> kubectl create deployment <deployment-object-name> --image=<imagename:version> --port=<portNo>
+To delete deployment -------> kubectl delete deployment <deployment-name>
+To delete all deployment -------> kubectl delete deployment --all (same for services, sercets, configmap)
+To get describtion of deployment ----------> kubectl describe deployment <deployment-object-name>
+To restart the deployment-object -----------> kubectl rollout restart deployment/<deployment-object-name>
+
+
+services:
+--------------
+To get all services  ------------> kubectl get services
+To expose node to public ---------> kubectl expose deployment <deployment-object-name> --type=<service-type> (eg:NodePort, loadbalance)
+To delete service ----------------> kubectl delete service <service-object-name>
+To get all service with associated with ingress-nginx -------> kubectl get svc -n ingress-nginx
+
+
+
+Deploy app through .yaml file procudures:
+--------------------------------------------------------
+To create deployment and service through .yaml file --------------> kubectl apply -f <service/deplyment-object.yaml>
+To get the internal node ips ----------------> kubectl get nodes -o wide (internal ip and minikube ip are the same only)
+To access the pods through the nodesport: -------------------> http://{nodeIP}:{portNo}/{API-URL}
+To get the service url -----------> minikube service <service-object-name> --url
+
+
+To encode the secret-keys:
+---------------------------------
+echo -n "some secret string" | base64
+
+
+
+
+Notes:
+----------------
+creations:
+-----------
+Deployment create ----> ReplicasSets create ----> Pods
+
+Deletions:
+-----------
+Pods ----> ReplicasSets ----> Deployment
+
+
+
+DockerHUB-Push:
+---------------
+1) docker login
+2) build the docker image
+3) docker tag <local-image-name>:<local-tag> <your-username>/<repository-name>:<tag>
+4) docker push <your-username>/<repository-name>:<tag>
+
+
+

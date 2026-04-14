@@ -1,0 +1,10 @@
+Components of the kubeflow:
+----------------------------------------------------
+kubeflow pipeline (kfp) -> model loading, training
+kserve -> model deployment expose to external
+kub notebook -> writes codes
+kub katib -> hypertuning of the model
+model registry -> 
+kubeflow dashboard --> ui 
+
+promethes and grafana for --> model observability
