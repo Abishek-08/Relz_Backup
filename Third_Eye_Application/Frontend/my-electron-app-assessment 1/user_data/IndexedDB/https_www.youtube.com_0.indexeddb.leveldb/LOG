@@ -1,0 +1,7 @@
+2025/11/06-15:33:00.517 a04f Reusing MANIFEST /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/11/06-15:33:00.517 a04f Recovering log #3
+2025/11/06-15:33:00.523 a04f Reusing old log /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2025/11/06-15:34:00.198 a050 Level-0 table #5: started
+2025/11/06-15:34:00.210 a050 Level-0 table #5: 605944 bytes OK
+2025/11/06-15:34:00.214 a050 Delete type=0 #3
+2025/11/06-15:34:00.215 a050 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

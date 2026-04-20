@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>Mock App</title></head>
+<body style="font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh">
+  <h1>Mock Third-Party App</h1>
+  <button id="xbtn">Do Action</button>
+  <button id="closeSelf">Request Close</button>
+
+  <script>
+    document.getElementById('xbtn').addEventListener('click', () => {
+      console.log('Mock: action clicked');
+    });
+    document.getElementById('closeSelf').addEventListener('click', () => {
+      if (window.requestEmbedClose) {
+        window.requestEmbedClose();
+      } else {
+        console.log('requestEmbedClose not available');
+      }
+    });
+  </script>
+</body>
+</html>

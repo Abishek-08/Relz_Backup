@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HackerRank Integration POC</title>
+  <style>
+    body { margin:0; display:flex; flex-direction:column; height:100vh; font-family: sans-serif; }
+    #log { height:140px; background:#111; color:#0f0; padding:10px; overflow:auto; font-size:13px; }
+    webview { flex:1; border-top:1px solid #ddd; }
+    .controls { padding:8px; background:#fafafa; border-bottom:1px solid #eee; }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button id="reload">Reload Webview</button>
+    <span>Loading: HackerRank</span>
+  </div>
+  <div id="log">Logs:</div>
+  <!-- preload points to guest-preload which will be injected into the guest page -->
+  <webview id="thirdPartyView" src="https://www.hackerrank.com/" preload="./guest-preload.js" allowpopups></webview>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

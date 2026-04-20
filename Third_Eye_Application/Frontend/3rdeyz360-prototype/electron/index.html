@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3rdEyZ360 Prototype</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 18px; }
+      video { width: 45%; margin-right: 10px; border: 1px solid #ccc; }
+      #controls { margin-top: 12px; }
+      .btn { padding: 8px 12px; margin-right: 8px; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h2>3rdEyZ360 — Camera ownership prototype</h2>
+    <p>Left: Local camera (host). Right: Screen capture of "guest app" when guest enables video.</p>
+    <div>
+      <video id="localVideo" autoplay muted playsinline></video>
+      <video id="screenVideo" autoplay playsinline></video>
+    </div>
+
+    <div id="controls">
+      <button id="startHost" class="btn">Start Host Camera</button>
+      <button id="stopHost" class="btn">Stop Host Camera</button>
+      <button id="simulateGuestOn" class="btn">Simulate Guest Video ON</button>
+      <button id="simulateGuestOff" class="btn">Simulate Guest Video OFF</button>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

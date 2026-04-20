@@ -1,0 +1,6 @@
+2025/11/06-12:57:15.533 a04f Creating DB /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/IndexedDB/https_leetcode.com_0.indexeddb.leveldb since it was missing.
+2025/11/06-12:57:15.538 a04f Reusing MANIFEST /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/IndexedDB/https_leetcode.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/11/06-17:55:13.728 a050 Level-0 table #5: started
+2025/11/06-17:55:13.730 a050 Level-0 table #5: 1254 bytes OK
+2025/11/06-17:55:13.733 a050 Delete type=0 #3
+2025/11/06-17:55:13.733 a050 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

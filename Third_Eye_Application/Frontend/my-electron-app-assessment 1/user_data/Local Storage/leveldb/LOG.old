@@ -1,0 +1,6 @@
+2025/11/07-14:57:06.061 ea89 Reusing MANIFEST /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/Local Storage/leveldb/MANIFEST-000001
+2025/11/07-14:57:06.074 ea89 Recovering log #9
+2025/11/07-14:57:06.074 ea89 Reusing old log /home/abishekkumar/Documents/Third_Eye_Application/Frontend/my-electron-app-assessment 1/user_data/Local Storage/leveldb/000009.log 
+2025/11/07-15:06:39.210 ea8a Level-0 table #13: started
+2025/11/07-15:06:39.215 ea8a Level-0 table #13: 23195 bytes OK
+2025/11/07-15:06:39.218 ea8a Delete type=0 #9

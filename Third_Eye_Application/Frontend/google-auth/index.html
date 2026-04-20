@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Electron Google Session</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 40px;
+      }
+      button {
+        margin: 10px;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Unified Assessment Platform</h1>
+    <p>
+      Login with Google once, then open HackerRank or LeetCode reusing session
+    </p>
+
+    <button id="googleLogin">Login with Google</button>
+    <button id="hackerrankBtn">Open HackerRank</button>
+    <button id="leetcodeBtn">Open LeetCode</button>
+
+    <p id="status"></p>
+
+    <script>
+      const status = document.getElementById("status");
+
+      document
+        .getElementById("googleLogin")
+        .addEventListener("click", async () => {
+          status.textContent = "Opening Google login...";
+          const result = await window.electronAPI.openGoogleLogin();
+          status.textContent = result
+            ? "✅ Google login successful"
+            : "❌ Login failed";
+        });
+
+      document.getElementById("hackerrankBtn").addEventListener("click", () => {
+        window.electronAPI.openPlatform("hackerrank");
+      });
+
+      document.getElementById("leetcodeBtn").addEventListener("click", () => {
+        window.electronAPI.openPlatform("leetcode");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Third-Party Mock App</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Third-Party Mock Application</h1>
+  <button id="startBtn">Start Test</button>
+  <button id="stopBtn">Stop Test</button>
+  <p id="status"></p>
+  <script>
+    // This script runs inside the third-party page (no direct electron access)
+    document.getElementById('startBtn').addEventListener('click', () => {
+      document.getElementById('status').textContent = 'Start clicked';
+    });
+    document.getElementById('stopBtn').addEventListener('click', () => {
+      document.getElementById('status').textContent = 'Stop clicked';
+    });
+  </script>
+</body>
+</html>

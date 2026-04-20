@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Embed HackerRank Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; display:flex; flex-direction:column; height:100vh; }
+    .top { padding: 8px; background:#f4f4f4; border-bottom:1px solid #ddd; }
+    #container { flex:1; display:flex; gap:8px; padding:8px; }
+    #embedArea { flex:1; border:1px solid #ccc; position:relative; min-width:400px; }
+    #log { width: 380px; border-left:1px solid #ddd; padding:8px; overflow:auto; }
+    webview { width:100%; height:100%; }
+    .controls { position:absolute; top:8px; left:8px; z-index:10; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <button id="openBtn">Open HackerRank</button>
+    <button id="openMockBtn">Open Mock (local)</button>
+    <button id="closeBtn">Close Embedded</button>
+    <span id="status"></span>
+  </div>
+
+  <div id="container">
+    <div id="embedArea">
+      <!-- webview injected here -->
+      <div class="controls"></div>
+    </div>
+
+    <div id="log">
+      <h4>Events</h4>
+      <div id="events"></div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>
