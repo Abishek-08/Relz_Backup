@@ -1,0 +1,2 @@
+export const DESKTOP_PAGE_SIZE = 10;
+export const MAX_COMMENT_CHARS_DEFAULT = 500;

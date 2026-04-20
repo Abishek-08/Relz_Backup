@@ -1,0 +1,9 @@
+mongo-crendtials:
+------------------
+root
+jLGwIfQEv1
+
+
+
+DOCKER_HOST = tcp://localhost:2375
+PATH = 'C:\\Program Files\\Docker\\Docker\\resources\\bin;${PATH}'

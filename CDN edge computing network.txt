@@ -1,0 +1,29 @@
+CDN - edge computing network
+    - fall under networking
+    - networking services
+    - storage 
+       SDS - soft defined storage
+       SDN - soft defined network
+       SDC - soft data centre
+       SDS - soft defined security
+       
+       NAT - don't use IP, use MAC address
+             IPv4 - four parts - 192.0.0.1 -> 192 -> subnet (network within network)
+                                 255.255.0.1 
+                                 255.255.255.0
+                                 
+             IPv6 - six parts - 1byte per section; 8bit=1byte;in hexadecimal no not decimal no; u can assign any things in the world (electronically controlled devices).
+             
+             Mobile no: country-code => subnet mask
+                        remaining-no => other no
+                        
+                
+                
+Terraform -> CPU, networking, security-group, OS configuration, IP mapping, cloud init after up  -- only infra -- have limitation
+Ansible  -> k8s installation, CICD, kubectl    ----- tools installation
+ArgoCD   -> installed through the Anisble
+             
+        
+        
+        
+git clean -fd ----> To remove the untracked files.

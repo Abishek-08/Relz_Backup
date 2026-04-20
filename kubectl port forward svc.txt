@@ -1,0 +1,31 @@
+
+kubectl port-forward svc/prometheus-server -n observability 9090:80
+
+
+helm upgrade prometheus prometheus-community/prometheus -n observ -f prometheus-values.yaml
+
+kubectl rollout restart deploy/prometheus-server -n observ
+
+
+helm install cassandra bitnami/cassandra -f values.yaml -n database
+helm upgrade --install cassandra bitnami/cassandra -f values.yaml -n database
+
+kubectl delete svc cassandra -n database
+kubectl delete statefulset cassandra -n database
+kubectl delete configmap cassandra-jmx-config -n database
+kubectl delete pvc cassandra-data-cassandra-0 -n database
+
+
+
+
+
+helm upgrade --install mongo bitnami/mongodb -f values.yaml -n database
+helm uninstall cassandra -n database
+
+kubectl delete statefulset mongo-mongodb -n database --force --grace-period=0
+kubectl delete pvc app.kubernetes.io/name=mongodb -n database
+
+kubectl patch pvc <pvc-name> -n database -p '{"metadata":{"finalizers":null}}'
+ 
+
+
