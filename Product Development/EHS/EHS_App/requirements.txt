@@ -1,0 +1,7 @@
+ultralytics
+fastapi
+fastapi[standard]
+pymongo
+motor
+SQLAlchemy
+pymysql

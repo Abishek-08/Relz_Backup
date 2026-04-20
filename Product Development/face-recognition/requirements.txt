@@ -1,0 +1,7 @@
+facenet_pytorch
+faiss-cpu
+onnx
+onnxruntime
+fastapi
+opencv-python
+python-multipart

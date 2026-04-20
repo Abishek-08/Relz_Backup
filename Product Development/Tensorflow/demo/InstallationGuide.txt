@@ -1,0 +1,6 @@
+To Install Nvidia-Driver:
+sudo apt install nvidia-driver-535 nvidia-dkms-535
+
+To Install Tensorflow in local machine:
+pip install --upgrade pip
+pip install 'tensorflow[and-cuda]'

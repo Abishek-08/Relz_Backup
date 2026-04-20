@@ -1,0 +1,64 @@
+const LiveStreamCard = ({ onEnlarge }) => {
+  return (
+    <div>
+      <span className="mb-4 inline-flex">
+        <p className="mr-2 text-2xl  font-bold text-gray-700">Live Streams</p>
+
+        <svg
+          role="img"
+          className="mt-1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          width="24px"
+          height="24px"
+        >
+          <path
+            fill="#ed333b"
+            d="M168 128a40 40 0 1 1-40-40a40 40 0 0 1 40 40m40 0a79.74 79.74 0 0 0-20.37-53.33a8 8 0 1 0-11.92 10.67a64 64 0 0 1 0 85.33a8 8 0 0 0 11.92 10.67A79.79 79.79 0 0 0 208 128M80.29 85.34a8 8 0 1 0-11.92-10.67a79.94 79.94 0 0 0 0 106.67a8 8 0 0 0 11.92-10.67a63.95 63.95 0 0 1 0-85.33m158.28-4A119.48 119.48 0 0 0 213.71 44a8 8 0 1 0-11.42 11.2a103.9 103.9 0 0 1 0 145.56A8 8 0 1 0 213.71 212a120.12 120.12 0 0 0 24.86-130.71Zm-206.4 87.14A103.9 103.9 0 0 1 53.71 55.22A8 8 0 1 0 42.29 44a119.87 119.87 0 0 0 0 168a8 8 0 1 0 11.42-11.2a103.61 103.61 0 0 1-21.54-32.32"
+          />
+        </svg>
+      </span>
+
+      {/* Grid layout for the live streams */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* Zone 1 Stream */}
+        <div onClick={() => onEnlarge("1")} className="cursor-pointer">
+          <p className="mb-2 text-gray-800 font-medium bg-linear-to-tr from-sky-500 to-indigo-500 rounded-lg p-1">
+            Manufacturing Zone
+          </p>
+          <img
+            src="http://127.0.0.1:8000/EHS/V1/ppe/live?zone=zone1"
+            alt="Manufacturing Zone Stream"
+            className="w-full rounded-lg"
+          />
+        </div>
+
+        {/* Zone 2 Stream */}
+        <div onClick={() => onEnlarge("2")} className="cursor-pointer">
+          <p className="mb-2 text-gray-800 font-medium bg-linear-to-tr from-sky-500 to-indigo-500 rounded-lg p-1">
+            Construction Zone
+          </p>
+          <img
+            src="http://127.0.0.1:8000/EHS/V1/ppe/live?zone=zone2"
+            alt="Construction Zone Stream"
+            className="w-full rounded-lg"
+          />
+        </div>
+
+        {/* Zone 3 Stream */}
+        <div onClick={() => onEnlarge("3")} className="cursor-pointer">
+          <p className="mb-2 text-gray-800 font-medium bg-linear-to-tr from-sky-500 to-indigo-500 rounded-lg p-1">
+            Import/Export Zone
+          </p>
+          <img
+            src="http://127.0.0.1:8000/EHS/V1/ppe/live?zone=zone3"
+            alt="Import/Export Zone Stream"
+            className="w-full rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LiveStreamCard;

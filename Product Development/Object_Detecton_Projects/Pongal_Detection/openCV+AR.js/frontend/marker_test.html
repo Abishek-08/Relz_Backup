@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR.js and OpenCV Integration</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled: false">
+      <!-- Marker setup -->
+      <a-marker
+        type="pattern"
+        url="./assets/pattern-kolam_final _2.patt"
+        id="marker"
+        emitevents="true"
+      >
+        <!-- 3D model to display when marker is detected -->
+        <a-box position="0 0.5 0" material="color: blue;"></a-box>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const marker = document.getElementById("marker");
+
+        if (!marker) {
+          console.error("Marker not found!");
+          return; // Prevent further execution if marker is not found
+        } else {
+          console.log("Marker found");
+
+          // Listen to markerFound and markerLost events
+          marker.addEventListener("markerFound", function () {
+            console.log("Marker is detected!");
+            window.location.href = "https://relevantz.com/";
+          });
+
+          marker.addEventListener("markerLost", function () {
+            console.log("Marker is lost!");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

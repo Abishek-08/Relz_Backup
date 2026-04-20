@@ -1,0 +1,10 @@
+dotenv
+ultralytics
+fastapi
+fastapi[standard]
+pymongo
+motor
+SQLAlchemy
+pymysql
+python-multipart
+uvicorn

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR.js and OpenCV Integration</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene embedded arjs="patternRatio:0.80" vr-mode-ui="enabled: false">
+      <!-- Marker setup -->
+      <a-marker
+        type="pattern"
+        url="./assets/pattern-kolam_final _2.patt"
+        id="marker"
+      >
+        <!-- 3D model to display when marker is detected -->
+        <a-box position="0 0.5 0" material="color: blue;"></a-box>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <!-- Hidden canvas element to capture the video frame -->
+    <canvas id="captureCanvas" style="display: none"></canvas>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const marker = document.getElementById("marker");
+
+        if (!marker) {
+          console.error("Marker not found!");
+          return; // Prevent further execution if marker is not found
+        }
+
+        // Find the video element used by AR.js
+        let videoElement = document.querySelector("video");
+
+        if (!videoElement) {
+          console.error("Video element not found!");
+          return;
+        }
+
+        const canvasElement = document.getElementById("captureCanvas");
+        const ctx = canvasElement.getContext("2d");
+
+        // Capture and send image data every 3 seconds when the marker is visible
+        setInterval(() => {
+          if (marker.object3D.visible) {
+            captureImage(videoElement, canvasElement, ctx);
+          }
+        }, 1000); // Capture every 3 seconds when marker is visible
+
+        // Function to capture the image from the webcam
+        function captureImage(video, canvas, ctx) {
+          // Set the canvas size to match the video feed
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+
+          // Draw the current video frame onto the canvas
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+          // Convert the canvas image to base64
+          const imageDataUrl = canvas.toDataURL("image/jpeg");
+
+          // Send the image data to the Flask backend
+          sendImageToBackend(imageDataUrl);
+        }
+
+        // Function to send captured image to Flask backend
+        async function sendImageToBackend(imageDataUrl) {
+          try {
+            console.log("Sending image data to backend...");
+
+            const response = await fetch(
+              "http://127.0.0.1:5000/process_frame",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ image: imageDataUrl }), // Ensure the body is correctly formatted
+              }
+            );
+
+            // Check the response
+            if (response.ok) {
+              const data = await response.json();
+              console.log("Processed Data:", data.keypoints); // Print the keypoints or other data received from the backend
+            } else {
+              console.error(
+                "Error response from backend:",
+                response.status,
+                response.statusText
+              );
+            }
+          } catch (error) {
+            console.error("Error sending image to backend:", error);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
