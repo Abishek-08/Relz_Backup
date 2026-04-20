@@ -1,0 +1,536 @@
+
+// Jenkinsfile — Auto-increment tags for backend (vN), integration (itN), k6 (ptN)
+// Windows agent (uses `bat`). Values adapted to your current job and namespace.  [1](https://relevantztech-my.sharepoint.com/personal/losini_ravi_relevantz_com/Documents/POC_Details.xlsx)
+
+def SERVICES = []
+
+pipeline {
+  
+agent any
+
+
+  parameters {
+    string(name: 'GITOPS_BRANCH',   defaultValue: 'CICD/k8s-manifest', description: 'GitOps branch')
+    string(name: 'GITOPS_REPO_URL', defaultValue: 'https://gitlab.relevantz.com/r2dc/ikycreactfac', description: 'GitOps repo URL')
+    booleanParam(name: 'BUILD_INTEGRATION_AND_K6', defaultValue: true, description: 'Build & push integration and k6 test images')
+
+    // Optional manual overrides (if provided, we increment from them in this run)
+    string(name: 'API_TAG', defaultValue: '', description: 'Override backend tag (e.g., v7). Leave empty to auto-increment.')
+    string(name: 'IT_TAG',  defaultValue: '', description: 'Override integration-tests tag (e.g., it7). Leave empty to auto-increment.')
+    string(name: 'PT_TAG',  defaultValue: '', description: 'Override k6 tag (e.g., pt7). Leave empty to auto-increment.')
+
+    string(name: 'GIT_CREDENTIALS_ID', defaultValue: 'git_creds', description: 'Secret Text PAT for Git push')
+     string(name: 'GIT_TOKEN_ID', defaultValue: 'Git_token', description: 'Secret Text PAT for Git push')
+     booleanParam(name: 'UPDATE_GITOPS', defaultValue: true, description: 'Update GitOps manifests')
+  }
+
+  environment {
+    // Credentials
+    SONAR_TOKEN       = credentials('sonar-token')     // used by withSonarQubeEnv
+    REGISTRY_URL      = 'https://index.docker.io/v1/'
+    REGISTRY_CRED_ID  = 'dockerhub-creds'
+    REGISTRY_NAMESPACE= 'losiniravi'
+  }
+
+  stages {
+
+    stage('Checkout') {
+      steps { checkout scm }
+    }
+
+    stage('Detect Changed Services') {
+      steps {
+        script {
+          def diff = bat(script: "git diff --name-only HEAD~1", returnStdout: true).trim()
+          echo "Changed files:\n${diff}"
+          // Service folders used in your pipeline  [1](https://relevantztech-my.sharepoint.com/personal/losini_ravi_relevantz_com/Documents/POC_Details.xlsx)
+          def allServices = ['trace-project-service','trace-task-service','trace-timesheet-service']
+
+          SERVICES = []
+          def lines = diff ? diff.readLines() : []
+          allServices.each { svc ->
+            if (lines.any { it.trim().startsWith("${svc}/") }) {
+              SERVICES << svc
+            }
+          }
+          if (SERVICES.isEmpty()) {
+            error "No service changes detected"
+          } else {
+            echo "Changed services: ${SERVICES.join(', ')}"
+          }
+        }
+      }
+    }
+
+    // ------------------ AUTO TAGS ------------------
+
+
+stage('Restore Tag Counters (Copy from last successful)') {
+  steps {
+    script {
+      // Try to copy .ci/tags.json from the last successful build of THIS job.
+      // NOTE: projectName can be env.JOB_NAME; selector lastSuccessful() is provided by the Copy Artifact plugin.
+      //       'optional: true' prevents failure if this is the first build.
+      try {
+        copyArtifacts(
+          projectName: env.JOB_NAME,
+          selector: lastSuccessful(),
+          filter: '.ci/tags.json',
+          fingerprintArtifacts: true,
+          optional: true
+        )
+        echo 'Restored .ci/tags.json from last successful build (if available).'
+      } catch (ignored) {
+        echo 'No previous artifact found; will initialize counters.'
+      }
+
+      // Ensure the file exists; initialize on first run or when missing.
+      if (!fileExists('.ci/tags.json')) {
+        if (!fileExists('.ci')) {
+          // Windows-safe mkdir
+          bat 'IF NOT EXIST .ci ( mkdir .ci )'
+        }
+        writeFile file: '.ci/tags.json', text: '{ "api": 0, "it": 0, "pt": 0 }'
+        echo 'Initialized .ci/tags.json with zeros.'
+      }
+    }
+  }
+}
+
+
+stage('Compute Auto Tags') {
+  steps {
+    script {
+      // Helpers (keep inside script)
+      def toInt = { v, defaultVal ->
+        try {
+          if (v == null) return (defaultVal as int)
+          if (v instanceof Number) return ((Number)v).intValue()
+          if (v instanceof String) {
+            def m = (v.trim() =~ /(\d+)$/)
+            return m ? (m[0][1] as int) : (defaultVal as int)
+          }
+        } catch (ignored) {}
+        return (defaultVal as int)
+      }
+
+      def computeNext = { overrideVal, current ->
+        String trimmed = (overrideVal ?: '').trim()
+        if (trimmed) {
+          def m = (trimmed =~ /(\d+)$/)  // v7/it12/pt3 -> 8/13/4
+          return m ? (m[0][1] as int) + 1 : 1
+        }
+        return (toInt(current, 0)) + 1
+      }
+
+      // Paths
+      final String dirPath  = '.ci'
+      final String filePath = "${dirPath}/tags.json"
+
+      // Read current counters (file already restored/initialized)
+      def api = 0, it1 = 0, pt = 0
+      def raw = readFile(filePath)?.trim()
+      if (raw) {
+        def parsed = new groovy.json.JsonSlurperClassic().parseText(raw)
+        if (parsed instanceof Map) {
+          api = toInt(parsed.api, 0)
+          it1  = toInt(parsed.it,  0)
+          pt  = toInt(parsed.pt,  0)
+        }
+      }
+
+      // Compute next
+      def apiNext = computeNext(params.API_TAG, api)
+      def itNext  = computeNext(params.IT_TAG,  it1)
+      def ptNext  = computeNext(params.PT_TAG,  pt)
+
+      // Local tag strings
+      def API_TAG_VAL = "v${apiNext}"
+      def IT_TAG_VAL  = "it${itNext}"
+      def PT_TAG_VAL  = "pt${ptNext}"
+
+      echo "Computed tags → API_TAG=${API_TAG_VAL}, IT_TAG=${IT_TAG_VAL}, PT_TAG=${PT_TAG_VAL}"
+
+      // Persist for next run
+      writeJSON file: filePath, json: [api: apiNext as int, it: itNext as int, pt: ptNext as int], pretty: 2
+
+      // Optionally export env for later stages (prefer withEnv when calling bat/docker)
+      env.API_TAG = API_TAG_VAL.toString()
+      env.IT_TAG  = IT_TAG_VAL.toString()
+           env.PT_TAG  = PT_TAG_VAL.toString()
+    }
+  }
+}
+
+    // ------------------ BUILD / TEST / SAST ------------------
+    stage('Build Backend (Changed)') {
+      when { expression { return SERVICES && SERVICES.size() > 0 } }
+      steps {
+        script {
+          SERVICES.each { mod ->
+            dir(mod) {
+              bat 'gradlew.bat clean build -x test'
+            }
+          }
+        }
+      }
+    }
+
+    stage('Test Backend (Changed)') {
+      when { expression { return SERVICES && SERVICES.size() > 0 } }
+      steps {
+        script {
+          SERVICES.each { mod ->
+            dir(mod) { bat 'gradlew.bat test' }
+          }
+        }
+      }
+      post {
+        always {
+          junit testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true
+        }
+      }
+    }
+
+    stage('SAST - SonarQube (Changed)') {
+      when { expression { return SERVICES && SERVICES.size() > 0 } }
+      steps {
+        script {
+          withSonarQubeEnv('sonar-token') {
+            SERVICES.each { mod ->
+              dir(mod) {
+                // Separate main/test to avoid "indexed twice"
+                 bat "sonar-scanner -Dsonar.projectKey=${mod} -Dsonar.sources=src -Dsonar.java.binaries=build\\classes"
+              }
+            }
+          }
+        }
+      }
+    }
+
+   /* stage('Quality Gate') {
+      steps {
+        timeout(time: 15, unit: 'MINUTES') {
+          waitForQualityGate abortPipeline: true
+        }
+      }
+    }*/
+
+    stage('Check Docker Version') { steps { bat 'docker version' } }
+
+    // ------------------ DOCKER BUILD & PUSH WITH AUTO TAGS ------------------
+   
+// -------- Build & Push Backend Images (vN) --------
+stage('Build & Push Backend Images (vN)') {
+  when { expression { SERVICES && SERVICES.size() > 0 } }
+  steps {
+    script {
+      // Capture values locally (prefer local vars for reliability)
+      final String registryUrl   = env.REGISTRY_URL ?: 'https://index.docker.io/v1/'
+      final String registryCred  = env.REGISTRY_CRED_ID ?: 'dockerhub-creds'
+      final String registryNs    = env.REGISTRY_NAMESPACE ?: 'losiniravi'
+      final String apiTag        = env.API_TAG ?: 'v0'
+
+      echo "Preparing to build & push backend images with tag: ${apiTag}"
+      echo "Services: ${SERVICES}"
+
+      withEnv([
+        "REGISTRY_URL=${registryUrl}",
+        "REGISTRY_CRED_ID=${registryCred}",
+        "REGISTRY_NAMESPACE=${registryNs}",
+        "API_TAG=${apiTag}"
+      ]) {
+        docker.withRegistry(REGISTRY_URL, REGISTRY_CRED_ID) {
+          SERVICES.each { svc ->
+            dir(svc) {
+              // Ensure Dockerfile exists in service folder
+              if (!fileExists('Dockerfile')) {
+                echo "WARN: ${svc}/Dockerfile not found. Skipping ${svc}."
+              } else {
+                def imageRef = "${REGISTRY_NAMESPACE}/${svc}:${API_TAG}"
+                echo "Building ${imageRef} from ${svc}/"
+                def img = docker.build(imageRef, '.')
+                img.push()
+                echo "Pushed ${imageRef}"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------- Build & Push Integration Tests (itN) --------
+stage('Build & Push Integration Tests (itN)') {
+  when { expression { return params.BUILD_INTEGRATION_AND_K6 } }
+  steps {
+    script {
+      final String registryUrl   = env.REGISTRY_URL ?: 'https://index.docker.io/v1/'
+      final String registryCred  = env.REGISTRY_CRED_ID ?: 'dockerhub-creds'
+      final String registryNs    = env.REGISTRY_NAMESPACE ?: 'losiniravi'
+      final String itTag         = env.IT_TAG ?: 'it0'
+
+      echo "Preparing to build & push integration-tests with tag: ${itTag}"
+
+      withEnv([
+        "REGISTRY_URL=${registryUrl}",
+        "REGISTRY_CRED_ID=${registryCred}",
+        "REGISTRY_NAMESPACE=${registryNs}",
+        "IT_TAG=${itTag}"
+      ]) {
+        docker.withRegistry(REGISTRY_URL, REGISTRY_CRED_ID) {
+          dir('integration-tests') {
+            if (!fileExists('Dockerfile')) {
+              echo "WARN: integration-tests/Dockerfile not found. Skipping."
+            } else {
+              def imageRef = "${REGISTRY_NAMESPACE}/integration-tests:${IT_TAG}"
+              echo "Building ${imageRef} from integration-tests/"
+              def img = docker.build(imageRef, '.')
+              img.push()
+              echo "Pushed ${imageRef}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------- Build & Push k6 Tests (ptN) --------
+stage('Build & Push k6 Tests (ptN)') {
+  when { expression { return params.BUILD_INTEGRATION_AND_K6 } }
+  steps {
+    script {
+      final String registryUrl   = env.REGISTRY_URL ?: 'https://index.docker.io/v1/'
+      final String registryCred  = env.REGISTRY_CRED_ID ?: 'dockerhub-creds'
+      final String registryNs    = env.REGISTRY_NAMESPACE ?: 'losiniravi'
+      final String ptTag         = env.PT_TAG ?: 'pt0'
+
+      echo "Preparing to build & push k6-tests with tag: ${ptTag}"
+
+      withEnv([
+        "REGISTRY_URL=${registryUrl}",
+        "REGISTRY_CRED_ID=${registryCred}",
+        "REGISTRY_NAMESPACE=${registryNs}",
+        "PT_TAG=${ptTag}"
+      ]) {
+        docker.withRegistry(REGISTRY_URL, REGISTRY_CRED_ID) {
+          dir('k6') {
+            if (!fileExists('Dockerfile')) {
+              echo "WARN: k6/Dockerfile not found. Skipping."
+            } else {
+              def imageRef = "${REGISTRY_NAMESPACE}/k6-tests:${PT_TAG}"
+              echo "Building ${imageRef} from k6/"
+              def img = docker.build(imageRef, '.')
+              img.push()
+              echo "Pushed ${imageRef}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+    // ------------------ GITOPS MANIFEST UPDATE WITH NEW TAGS ------------------
+
+
+
+stage('Update GitOps Manifests (Separate Repo)') {
+  when { expression { return params.UPDATE_GITOPS ?: true } }
+  steps {
+    script {
+      // -------- Local inputs (no stage-level environment block) --------
+      final String gitOpsRepoUrl = params.GITOPS_REPO_URL?.trim()
+      final String gitOpsBranch  = params.GITOPS_BRANCH?.trim()
+      final String registryNs    = (env.REGISTRY_NAMESPACE ?: 'losiniravi').trim()
+
+      // Tags computed earlier in your "Compute Auto Tags" stage
+      final String apiTagVal     = (env.API_TAG ?: 'v0').trim()
+      final String itTagVal      = (env.IT_TAG  ?: 'it0').trim()
+      final String ptTagVal      = (env.PT_TAG  ?: 'pt0').trim()
+
+      echo "GitOps → repo=${gitOpsRepoUrl}, branch=${gitOpsBranch}, ns=${registryNs}"
+      echo "Tags → API=${apiTagVal}, IT=${itTagVal}, PT=${ptTagVal}"
+
+      // -------- Helpers (mapping + diagnostics + YAML updater) --------
+      def svcDirFor   = { String svc -> svc.replaceFirst(/^trace-/, '') }   // trace-foo -> foo
+      def imageNameFor= { String svc -> svc.replaceFirst(/^trace-/, '') }   // same mapping for image name
+
+      def showCurrentImages = { String filePath ->
+        if (!fileExists(filePath)) { echo "INFO: ${filePath} (missing)"; return }
+        def text  = readFile(filePath)
+        def lines = (text =~ /(?m)^\s*image\s*:\s*["']?([^\s"']+)["']?\s*$/)
+        if (lines.count > 0) {
+          echo "IMAGE LINES in ${filePath}:"
+          lines.each { m -> echo "  -> ${m[1]}" }
+        } else {
+          echo "IMAGE LINES in ${filePath}: none"
+        }
+      }
+
+      def updateYamlImage = { String filePath, String repoNs, String svcImageName, String tag ->
+        echo "Processing: ${filePath} (image=${svcImageName}, tag=${tag})"
+        if (!fileExists(filePath)) { echo "WARN: ${filePath} not found, skipping"; return }
+        def text = readFile(filePath)
+
+        // Replace image for this specific service (namespace-agnostic)
+        def svcPattern     = ~/(\s*image\s*:\s*["']?)([^\s"']+\/)${svcImageName}:([^\s"']+)(["']?)/
+        def svcReplacement = "\$1${repoNs}/${svcImageName}:${tag}\$4"
+        def replaced       = text.replaceAll(svcPattern, svcReplacement)
+        if (replaced != text) {
+          writeFile(file: filePath, text: replaced)
+          echo "UPDATED: ${filePath} -> ${repoNs}/${svcImageName}:${tag}"
+          return
+        }
+
+        // Fallback: replace first generic image line
+        def anyPattern     = ~/(\s*image\s*:\s*["']?)([^\s"']+\/)([^\s"']+):([^\s"']+)(["']?)/
+        def anyReplacement = "\$1${repoNs}/${svcImageName}:${tag}\$5"
+        def replacedAny    = text.replaceFirst(anyPattern, anyReplacement)
+        if (replacedAny != text) {
+          writeFile(file: filePath, text: replacedAny)
+          echo "UPDATED (fallback): ${filePath} -> ${repoNs}/${svcImageName}:${tag}"
+          return
+        }
+
+       
+// Best-effort insert under containers: - name:
+def inserted = false
+def lines    = text.readLines()
+def output   = new StringBuilder()
+def indent   = ""
+def underContainer = false
+def justSawName = false
+def lookaheadHasImage = false
+
+lines.eachWithIndex { line, i ->
+  output.append(line).append("\n")
+
+  if (line =~ /(?i)^\s*containers\s*:\s*$/) {
+    underContainer = true
+    justSawName = false
+    lookaheadHasImage = false
+  } else if (underContainer && line =~ /(?i)^\s*-\s*name\s*:\s*/) {
+    // We are at the start of a container item
+    justSawName = true
+    lookaheadHasImage = false
+
+    // Look ahead a few lines for an existing image field before inserting
+    for (int j = i + 1; j < Math.min(i + 10, lines.size()); j++) {
+      def l = lines[j]
+      if (l =~ /(?i)^\s*image\s*:\s*/) { lookaheadHasImage = true; break }
+      // Stop if next container item or list end
+      if (l =~ /(?i)^\s*-\s*name\s*:\s*/) break
+    }
+
+    if (!lookaheadHasImage) {
+      indent = (line - line.trim()) + "  "
+      output.append("${indent}image: ${repoNs}/${svcImageName}:${tag}\n")
+      inserted = true
+    }
+    underContainer = false
+    justSawName = false
+  }
+}
+
+if (inserted) {
+  writeFile(file: filePath, text: output.toString())
+  echo "INSERTED: image into ${filePath} -> ${repoNs}/${svcImageName}:${tag}"
+} else {
+   echo "NO MATCH/NO INSERT: ${filePath} (structure/path may differ)"
+        }
+      }
+
+      // -------- Work in a clean folder --------
+      dir('gitops') {
+        bat 'git config --global core.autocrlf false'
+
+        // 1) Secure clone/fetch using PAT (Secret Text)
+        withCredentials([string(credentialsId: params.GIT_TOKEN_ID, variable: 'GITLAB_TOKEN')]) {
+          def authedCloneUrl = gitOpsRepoUrl.replace('https://', "https://${GITLAB_TOKEN}@")
+
+          if (!fileExists('.git')) {
+            bat "git init"
+            bat "git remote add origin ${authedCloneUrl}"
+            bat "git fetch --all --quiet --tags"
+          } else {
+            bat "git remote set-url origin ${authedCloneUrl}"
+            bat "git fetch --all --quiet --tags"
+          }
+
+          // Checkout target branch (create from remote default if absent)
+          def checkRemote = bat(returnStdout: true, script: "git ls-remote --heads origin ${gitOpsBranch}").trim()
+          if (checkRemote) {
+            bat "git checkout -B ${gitOpsBranch} origin/${gitOpsBranch}"
+          } else {
+            def defaultBranch = bat(returnStdout: true, script: 'git remote show origin ^| findstr "HEAD branch"').trim()
+            def base = defaultBranch.tokenize(':')[-1].trim()
+            bat "git checkout -B ${gitOpsBranch} origin/${base}"
+          }
+
+          // Hygiene: restore remote to non-auth (prevent token leakage in .git/config)
+          bat "git remote set-url origin ${gitOpsRepoUrl}"
+        }
+
+        // 2) Diagnostics (before update)
+        SERVICES.each { svc -> showCurrentImages("apps/${svcDirFor(svc)}/rollout.yaml") }
+        showCurrentImages("analysis/integration-test.yaml")
+        showCurrentImages("analysis/k6-test.yaml")
+
+        // 3) Apply updates with local tag values (not env)
+        // Backend rollouts use vN tags
+        SERVICES.each { svc ->
+          def dirName   = svcDirFor(svc)          // e.g., 'project-service'
+          def imageName = imageNameFor(svc)       // e.g., 'project-service'
+          updateYamlImage("apps/${dirName}/rollout.yaml", registryNs, imageName, apiTagVal)
+        }
+
+        // Analysis images
+        updateYamlImage("analysis/integration-test.yaml", registryNs, "integration-tests", itTagVal)
+        updateYamlImage("analysis/k6-test.yaml",          registryNs, "k6-tests",          ptTagVal)
+
+        // 4) Commit & push if changed
+        bat 'git add .'
+        def status = bat(returnStdout: true, script: 'git status --porcelain').trim()
+        if (status) {
+          bat 'git config user.email "losini.ravi@relevantz.com"'
+          bat 'git config user.name  "losini.ravi"'
+          bat "git commit -m \"GitOps deploy API=${apiTagVal}, IT=${itTagVal}, PT=${ptTagVal}\""
+        } else {
+          echo "No changes detected (working tree clean), skipping commit"
+        }
+
+        withCredentials([string(credentialsId: params.GIT_TOKEN_ID, variable: 'GITLAB_TOKEN')]) {
+          def authedPushUrl = gitOpsRepoUrl.replace('https://', "https://${GITLAB_TOKEN}@")
+          bat "git remote set-url origin ${authedPushUrl}"
+          if (status) {
+            bat "git push origin ${gitOpsBranch}"
+            echo "Pushed commit to ${gitOpsBranch}"
+          } else {
+            echo "Skip push: nothing committed"
+          }
+          bat "git remote set-url origin ${gitOpsRepoUrl}"
+        }
+      } // dir('gitops')
+    } // script
+  } // steps
+}
+
+stage('Archive Tag Counters') {
+  steps {
+       // archives the file into the build’s artifacts; accessible to copyArtifacts on next run
+    archiveArtifacts artifacts: '.ci/tags.json', fingerprint: true, onlyIfSuccessful: true
+  }
+}
+}
+
+  post {
+    always {
+      archiveArtifacts artifacts: '**/build/**/*.jar', allowEmptyArchive: true
+    }
+  }
+}

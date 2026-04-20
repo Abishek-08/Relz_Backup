@@ -1,0 +1,34 @@
+Argo rollouts Installation guide in cluster-controller:
+-------------------------------------------------------------
+Step-1:
+---------
+ kubectl create namespace argo-rollouts
+ kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
+ 
+Argo rollouts Installation guide in local machine (Ubuntu):
+----------------------------------------------------------------
+step-1:
+----------
+curl -LO https://github.com/argoproj/argo-rollouts/releases/latest/download/kubectl-argo-rollouts-darwin-amd64
+
+step-2:
+----------
+chmod +x ./kubectl-argo-rollouts-darwin-amd64
+
+step-3:
+------------
+sudo mv ./kubectl-argo-rollouts-darwin-amd64 /usr/local/bin/kubectl-argo-rollouts
+
+step-4:
+--------------
+kubectl argo rollouts version
+
+
+
+Rollouts running verification commands:
+-------------------------------------------
+kubectl get analysistemplate -n microservice
+kubectl get analysisrun -n microservice
+kubectl argo rollouts promote project-service -n microservice
+kubectl argo rollouts get rollout project-service -n microservice
+kubectl get rollouts

@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: project-service
+  namespace: microservice
+spec:
+  replicas: 2
+
+  strategy:
+    blueGreen:
+      activeService: project-service
+      previewService: project-service-preview
+      autoPromotionEnabled: true
+
+      prePromotionAnalysis:
+        templates:
+          - templateName: k6-load-test
+
+      postPromotionAnalysis:
+        templates:
+          # - templateName: prometheus-success-rate
+          - templateName: zap-security-scan
+
+  selector:
+    matchLabels:
+      app: project-service
+
+  template:
+    metadata:
+      labels:
+        app: project-service
+    spec:
+      containers:
+        - name: project-service
+          image: losiniravi/trace-project-service:v6
+          ports:
+            - containerPort: 8081

@@ -1,0 +1,8 @@
+resources:
+  - rollout.yaml
+  - analysis-template.yaml
+
+configMapGenerator:
+  - name: k6-script
+    files:
+      - test.js

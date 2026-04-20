@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-service-deployment
+  namespace: microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-service
+  template:
+    metadata:
+      labels:
+        app: task-service
+    spec:
+      containers:
+        - name: task-service
+          image: task-image:1.0
+          ports:
+            - containerPort: 8083
+          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-service-svc
+  namespace: microservice
+spec:
+  selector:
+    app: task-service
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8083
+  type: NodePort
+ 

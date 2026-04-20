@@ -1,0 +1,31 @@
+controller:
+  admin:
+    username: admin
+    password: admin123
+
+  serviceType: NodePort
+  nodePort: 32000
+
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+
+  installPlugins:
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - docker-workflow
+    - credentials-binding
+    - blueocean
+    - configuration-as-code
+
+  JCasC:
+    enabled: true
+
+persistence:
+  enabled: true
+  size: 10Gi

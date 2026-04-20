@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: integration-test
+  namespace: microservice
+spec:
+  metrics:
+    - name: integration
+      provider:
+        job:
+          spec:
+            template:
+              spec:
+                containers:
+                  - name: tests
+                    image: losiniravi/integration-tests:it6
+                    env:
+                      - name: BASE_URL
+                        value: http://my-app.default.svc.cluster.local
+                restartPolicy: Never

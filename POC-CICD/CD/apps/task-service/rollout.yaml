@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: task-service
+  namespace: microservice
+spec:
+  replicas: 2
+
+  strategy:
+    blueGreen:
+      activeService: task-service
+      previewService: task-service-preview
+      autoPromotionEnabled: false
+
+      prePromotionAnalysis:
+        templates:
+          - templateName: k6-load-test
+
+      postPromotionAnalysis:
+        templates:
+          # - templateName: prometheus-success-rate
+          - templateName: zap-security-scan
+
+  selector:
+    matchLabels:
+      app: task-service
+
+  template:
+    metadata:
+      labels:
+        app: task-service
+    spec:
+      containers:
+        - name: task-service
+          image: losiniravi/trace-task-service:v4
+          ports:
+            - containerPort: 8082

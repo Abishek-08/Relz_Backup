@@ -1,0 +1,4 @@
+kubectl create ns database
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+helm upgrade --install my-mongodb -f values.yaml bitnami/mongodb --namespace database --create-namespace

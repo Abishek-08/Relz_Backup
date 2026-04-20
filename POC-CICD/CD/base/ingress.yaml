@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: project-ingress
+  namespace: microservice
+spec:
+  rules:
+    # - host: ikyc.com
+    - http:
+        paths:
+          - path: /projects
+            pathType: Prefix
+            backend:
+              service:
+                name: project-service
+                port:
+                  number: 80
+          - path: /tasks
+            pathType: Prefix
+            backend:
+              service:
+                name: task-service
+                port:
+                  number: 80
+          - path: /timesheet
+            pathType: Prefix
+            backend:
+              service:
+                name: timesheet-service
+                port:
+                  number: 80

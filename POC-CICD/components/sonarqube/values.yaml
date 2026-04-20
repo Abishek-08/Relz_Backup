@@ -1,0 +1,7 @@
+community:
+  enabled: true
+
+monitoringPasscode: sonar123
+
+persistence:
+  enabled: true

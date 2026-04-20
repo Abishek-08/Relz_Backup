@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: krakend
+  namespace: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: krakend
+  template:
+    metadata:
+      labels:
+        app: krakend
+    spec:
+      enableServiceLinks: false
+      containers:
+        - name: krakend
+          image: devopsfaith/krakend:2.5
+          imagePullPolicy: IfNotPresent
+          args: ["run", "-c", "/etc/krakend/krakend.json"]
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KRAKEND_PORT
+              value: "8080"
+          volumeMounts:
+            - name: config
+              mountPath: /etc/krakend/krakend.json
+              subPath: krakend.json
+      volumes:
+        - name: config
+          configMap:
+            name: krakend-config

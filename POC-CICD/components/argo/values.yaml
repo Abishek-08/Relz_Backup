@@ -1,0 +1,29 @@
+# Basic Argo CD values for NodePort exposure
+server:
+  service:
+    type: NodePort
+    nodePortHttp: 30080 # optional — choose a fixed NodePort (HTTP)
+    nodePortHttps: 30443 # optional — choose a fixed NodePort (HTTPS)
+    ports:
+      http: 80
+      https: 443
+  ingress:
+    enabled: false
+  insecure: true # serve UI without enforcing HTTPS (for lab use)
+  extraArgs:
+    - --insecure # disable TLS redirection in ArgoCD server
+
+configs:
+  cm:
+    # Disable TLS redirect so UI works over plain HTTP
+    server.insecure: "true"
+
+redis:
+  enabled: true
+
+controller:
+  replicas: 1
+repoServer:
+  replicas: 1
+applicationSet:
+  replicas: 1

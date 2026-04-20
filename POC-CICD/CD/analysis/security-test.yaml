@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: zap-security-scan
+  namespace: microservice
+spec:
+  metrics:
+    - name: zap-scan
+      successCondition: result == 0
+      failureCondition: result != 0
+      provider:
+        job:
+          spec:
+            backoffLimit: 0
+            template:
+              spec:
+                restartPolicy: Never
+                containers:
+                  - name: zap
+                    image: zaproxy/zap-stable
+                    command: ["zap-baseline.py"]
+                    args:
+                      - "-t"
+                      - "http://project-service-preview.microservice.svc.cluster.local/projects"
+                      - "-r"
+                      - "zap-report.html"
+                      - "-I"
+                    volumeMounts:
+                      - name: zap-work
+                        mountPath: /zap/wrk
+                volumes:
+                  - name: zap-work
+                    emptyDir: {}

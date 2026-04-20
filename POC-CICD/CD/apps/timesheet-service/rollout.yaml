@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: timesheet-service
+  namespace: microservice
+spec:
+  replicas: 2
+
+  strategy:
+    blueGreen:
+      activeService: timesheet-service
+      previewService: timesheet-service-preview
+      autoPromotionEnabled: false
+
+      prePromotionAnalysis:
+        templates:
+          - templateName: k6-load-test
+
+      postPromotionAnalysis:
+        templates:
+          # - templateName: prometheus-success-rate
+          - templateName: zap-security-scan
+
+  selector:
+    matchLabels:
+      app: timesheet-service
+
+  template:
+    metadata:
+      labels:
+        app: timesheet-service
+    spec:
+      containers:
+        - name: timesheet-service
+          image: losiniravi/trace-timesheet-service:v4
+          ports:
+            - containerPort: 8083
